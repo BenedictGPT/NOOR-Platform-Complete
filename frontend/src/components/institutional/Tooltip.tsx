@@ -31,8 +31,8 @@ export interface TooltipProps {
 // Color mapping for Federal theme
 const colorClasses = {
   default: 'bg-gray-900 text-white',
-  primary: 'bg-institutional-blue text-white',
-  secondary: 'bg-institutional-silver text-white',
+  primary: 'bg-institutional-burgundy text-white',
+  secondary: 'bg-institutional-gold text-white',
   success: 'bg-green-600 text-white',
   warning: 'bg-yellow-600 text-white',
   danger: 'bg-red-600 text-white',

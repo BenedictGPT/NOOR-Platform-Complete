@@ -68,8 +68,8 @@ const sizeClasses = {
 // Color mapping for Federal theme
 const colorClasses = {
   default: 'focus:border-gray-400 focus:ring-gray-400',
-  primary: 'focus:border-institutional-blue focus:ring-institutional-blue',
-  secondary: 'focus:border-institutional-silver focus:ring-institutional-silver',
+  primary: 'focus:border-institutional-burgundy focus:ring-institutional-burgundy',
+  secondary: 'focus:border-institutional-gold focus:ring-institutional-gold',
   success: 'focus:border-green-500 focus:ring-green-500',
   warning: 'focus:border-yellow-500 focus:ring-yellow-500',
   danger: 'focus:border-red-500 focus:ring-red-500',

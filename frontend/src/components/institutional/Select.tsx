@@ -67,8 +67,8 @@ const variantClasses = {
 // Color mapping for Federal theme
 const colorClasses = {
   default: 'focus:border-gray-400 focus:ring-gray-400',
-  primary: 'focus:border-institutional-blue focus:ring-institutional-blue',
-  secondary: 'focus:border-institutional-silver focus:ring-institutional-silver',
+  primary: 'focus:border-institutional-burgundy focus:ring-institutional-burgundy',
+  secondary: 'focus:border-institutional-gold focus:ring-institutional-gold',
   success: 'focus:border-green-500 focus:ring-green-500',
   warning: 'focus:border-yellow-500 focus:ring-yellow-500',
   danger: 'focus:border-red-500 focus:ring-red-500',
@@ -274,7 +274,7 @@ export const Select: React.FC<SelectProps> = ({
               className={`
                 px-3 py-2 cursor-pointer
                 transition-colors duration-150
-                ${option.value === currentValue ? 'bg-institutional-blue/10 text-institutional-blue font-medium' : 'text-gray-900'}
+                ${option.value === currentValue ? 'bg-institutional-burgundy/10 text-institutional-burgundy font-medium' : 'text-gray-900'}
                 ${focusedIndex === index ? 'bg-gray-100' : ''}
                 ${option.disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'}
                 ${classNames.option || ''}
@@ -288,7 +288,7 @@ export const Select: React.FC<SelectProps> = ({
                   )}
                 </div>
                 {option.value === currentValue && (
-                  <svg className="w-5 h-5 text-institutional-blue" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-institutional-burgundy" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 )}

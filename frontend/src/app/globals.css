@@ -135,6 +135,16 @@ a {
   --support-deep-royal: #1E4AAE;
   --support-light-sky: #7DB5EB;
 
+  /* Institutional burgundy/gold */
+  --inst-crimson: #C21317;
+  --inst-burgundy: #7A0A0A;
+  --inst-oxblood: #4A0202;
+  --inst-nearblack: #0A0000;
+  --inst-gold: #F0A500;
+  --inst-gold-light: #F8D72E;
+  --inst-amber: #D97A00;
+  --inst-brown: #8A3C00;
+
   /* App tokens */
   --bg: #EAF4FB;
   --bg-subtle: #F6FAFE;
@@ -204,6 +214,58 @@ a {
 
   .gradient-cta {
     @apply bg-gradient-to-r from-engage-orange to-engage-red;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+  /* Institutional Interface utility classes */
+  .btn-institutional-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3
+           font-semibold text-white bg-institutional-burgundy shadow-cta hover:bg-institutional-crimson
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           focus-visible:ring-institutional-gold transition-all duration-200;
+  }
+
+  .btn-institutional-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3
+           font-semibold text-institutional-nearblack bg-institutional-gold hover:bg-institutional-amber
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           focus-visible:ring-institutional-gold transition-all duration-200;
+  }
+
+  .card-institutional {
+    @apply bg-white shadow-card rounded-2xl border border-gray-200;
+  }
+
+  .card-institutional-hover {
+    @apply bg-white shadow-card rounded-2xl border border-gray-200
+           hover:shadow-xl hover:border-institutional-gold transition-all duration-300;
+  }
+
+  .badge-eqi {
+    @apply inline-flex items-center rounded-pill bg-institutional-goldLight/20 text-institutional-gold
+           px-3 py-1 text-xs font-semibold;
+  }
+
+  .badge-institutional {
+    @apply inline-flex items-center rounded-pill bg-institutional-burgundy/10 text-institutional-burgundy
+           px-3 py-1 text-xs font-semibold;
+  }
+
+  .gradient-institutional-hero {
+    @apply bg-gradient-to-r from-institutional-burgundy to-institutional-crimson;
+  }
+
+  .gradient-institutional-cta {
+    @apply bg-gradient-to-r from-institutional-gold to-institutional-amber;
   }
 }
 

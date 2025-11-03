@@ -43,8 +43,8 @@ const barSizeClasses = {
 // Color mapping for Federal theme
 const colorClasses = {
   default: 'text-gray-600',
-  primary: 'text-institutional-blue',
-  secondary: 'text-institutional-silver',
+  primary: 'text-institutional-burgundy',
+  secondary: 'text-institutional-gold',
   success: 'text-green-600',
   warning: 'text-yellow-600',
   danger: 'text-red-600',
@@ -53,8 +53,8 @@ const colorClasses = {
 
 const dotColorClasses = {
   default: 'bg-gray-600',
-  primary: 'bg-institutional-blue',
-  secondary: 'bg-institutional-silver',
+  primary: 'bg-institutional-burgundy',
+  secondary: 'bg-institutional-gold',
   success: 'bg-green-600',
   warning: 'bg-yellow-600',
   danger: 'bg-red-600',

@@ -53,8 +53,8 @@ const labelSizeClasses = {
 // Color mapping for Federal theme
 const colorClasses = {
   default: 'border-gray-300 checked:bg-gray-600 checked:border-gray-600',
-  primary: 'border-institutional-blue/30 checked:bg-institutional-blue checked:border-institutional-blue',
-  secondary: 'border-institutional-silver/30 checked:bg-institutional-silver checked:border-institutional-silver',
+  primary: 'border-institutional-burgundy/30 checked:bg-institutional-burgundy checked:border-institutional-burgundy',
+  secondary: 'border-institutional-gold/30 checked:bg-institutional-gold checked:border-institutional-gold',
   success: 'border-green-300 checked:bg-green-600 checked:border-green-600',
   warning: 'border-yellow-300 checked:bg-yellow-600 checked:border-yellow-600',
   danger: 'border-red-300 checked:bg-red-600 checked:border-red-600',
@@ -129,8 +129,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
             ${isInvalid ? 'border-red-500' : ''}
             ${isDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}
             peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-opacity-50
-            ${color === 'primary' ? 'peer-focus:ring-institutional-blue' : ''}
-            ${color === 'secondary' ? 'peer-focus:ring-institutional-silver' : ''}
+            ${color === 'primary' ? 'peer-focus:ring-institutional-burgundy' : ''}
+            ${color === 'secondary' ? 'peer-focus:ring-institutional-gold' : ''}
             ${classNames.icon || ''}
           `}
         >

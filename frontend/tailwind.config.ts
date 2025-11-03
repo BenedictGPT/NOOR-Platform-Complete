@@ -32,11 +32,18 @@ const config: Config = {
           deepRoyal: "#1E4AAE", // Secondary anchor
           lightSky: "#7DB5EB",  // Subtle overlays
         },
-        // Institutional/Employers Theme
+        // Institutional/Employers Theme - NEW BURGUNDY/GOLD PALETTE
         institutional: {
-          blue: "#2E5984",
-          silver: "#8AA0B0",
-          cream: "#F0F4F7",
+          // Brand Colors
+          crimson: "#C21317",    // CTA hover / highlights
+          burgundy: "#7A0A0A",   // Primary actions
+          oxblood: "#4A0202",    // Elevated dark surfaces
+          nearblack: "#0A0000",  // Dark accents
+          // Gold Spectrum
+          goldLight: "#F8D72E",  // Status / chips
+          gold: "#F0A500",       // Secondary actions / tabs
+          amber: "#D97A00",      // Emphasis / progress
+          brown: "#8A3C00",      // Borders on warm surfaces
         },
         // Semantic tokens for Individual interface
         brand: {

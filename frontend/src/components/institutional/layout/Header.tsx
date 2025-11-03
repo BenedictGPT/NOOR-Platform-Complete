@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = ({
               className="object-contain"
             />
             <div className="hidden md:block">
-              <h1 className="text-lg font-bold text-institutional-silver font-cairo">
+              <h1 className="text-lg font-bold text-institutional-gold font-cairo">
                 NOOR Platform
               </h1>
               <p className="text-xs text-gray-500 font-noto">
@@ -65,7 +65,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Right Section */}
         <div className="flex items-center gap-4">
           {/* Language Switcher */}
-          <button className="hidden md:flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 hover:text-institutional-silver transition-colors">
+          <button className="hidden md:flex items-center gap-2 px-3 py-1.5 text-sm text-gray-600 hover:text-institutional-gold transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
             </svg>
@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({
                 setShowNotifications(!showNotifications);
                 if (onNotificationClick) onNotificationClick();
               }}
-              className="relative p-2 text-gray-600 hover:text-institutional-silver hover:bg-gray-100 rounded-lg transition-colors"
+              className="relative p-2 text-gray-600 hover:text-institutional-gold hover:bg-gray-100 rounded-lg transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
@@ -121,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({
                   )}
                 </div>
                 <div className="p-3 border-t border-gray-200">
-                  <Link href="/institutional/notifications" className="block text-center text-sm text-institutional-blue hover:text-institutional-silver transition-colors">
+                  <Link href="/institutional/notifications" className="block text-center text-sm text-institutional-burgundy hover:text-institutional-gold transition-colors">
                     View all notifications
                   </Link>
                 </div>
@@ -140,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <p className="text-sm font-medium text-gray-900">{user.name}</p>
                   <p className="text-xs text-gray-500">{user.role || 'Administrator'}</p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-institutional-blue flex items-center justify-center text-white font-semibold">
+                <div className="w-10 h-10 rounded-full bg-institutional-burgundy flex items-center justify-center text-white font-semibold">
                   {user.avatar ? (
                     <Image src={user.avatar} alt={user.name} width={40} height={40} className="rounded-full" />
                   ) : (

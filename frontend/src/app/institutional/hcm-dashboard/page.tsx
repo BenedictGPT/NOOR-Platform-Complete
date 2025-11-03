@@ -23,7 +23,7 @@ export default function HCMDashboardPage() {
 
   const getScoreColor = (score: number) => {
     if (score >= 90) return 'text-green-600';
-    if (score >= 80) return 'text-blue-600';
+    if (score >= 80) return 'text-institutional-burgundy-600';
     if (score >= 70) return 'text-yellow-600';
     return 'text-red-600';
   };
@@ -36,19 +36,19 @@ export default function HCMDashboardPage() {
     <DashboardLayout user={user} notificationCount={5}>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-gradient-to-r from-institutional-blue to-blue-700 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-institutional-burgundy to-blue-700 rounded-xl p-8 text-white">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold font-inter mb-2">
                 HCM Dashboard
               </h1>
-              <p className="text-blue-100 text-lg">
+              <p className="text-institutional-burgundy-100 text-lg">
                 {hcmData.institutionName} - Eight-Faculty Analytics
               </p>
             </div>
             <div className="text-right">
               <div className="text-6xl font-bold">{overallAverage}</div>
-              <div className="text-sm text-blue-100">Average Score</div>
+              <div className="text-sm text-institutional-burgundy-100">Average Score</div>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function HCMDashboardPage() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardBody>
               <div className="text-center">
-                <div className="text-4xl font-bold text-institutional-blue">
+                <div className="text-4xl font-bold text-institutional-burgundy">
                   {hcmData.totalEmployees}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Total Employees</div>
@@ -88,7 +88,7 @@ export default function HCMDashboardPage() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardBody>
               <div className="text-center">
-                <div className="text-4xl font-bold text-institutional-silver">
+                <div className="text-4xl font-bold text-institutional-gold">
                   {hcmData.departmentBreakdown.length}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Departments</div>
@@ -369,7 +369,7 @@ export default function HCMDashboardPage() {
         </div>
 
         {/* Data Flow Indicator */}
-        <Card className="bg-blue-50 border-2 border-institutional-blue">
+        <Card className="bg-institutional-burgundy-50 border-2 border-institutional-burgundy">
           <CardBody>
             <div className="flex items-center gap-4">
               <div className="text-4xl">📊</div>
