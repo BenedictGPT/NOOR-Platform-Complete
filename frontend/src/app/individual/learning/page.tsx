@@ -15,7 +15,7 @@ export default function IndividualLearning() {
 
   const stats = [
     { label: 'Skills Verified', value: '24', icon: '✓', color: 'text-green-600' },
-    { label: 'Applications', value: '8', icon: '📝', color: 'text-individual-red' },
+    { label: 'Applications', value: '8', icon: '📝', color: 'text-individual-royal' },
     { label: 'Interviews', value: '3', icon: '🎯', color: 'text-blue-600' },
     { label: 'Achievements', value: '12', icon: '⭐', color: 'text-yellow-600' },
   ];
@@ -91,11 +91,11 @@ export default function IndividualLearning() {
     <LearningLayout user={user} notificationCount={3}>
       <div className="space-y-6">
         {/* Welcome Header */}
-        <div className="bg-gradient-to-r from-individual-red to-red-700 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-individual-royal to-red-700 rounded-xl p-8 text-white">
           <h1 className="text-4xl font-bold font-playfair mb-2">
             Welcome back, {user.name.split(' ')[0]}! 👋
           </h1>
-          <p className="text-red-100 text-lg font-inter">
+          <p className="text-individual-royal-100 text-lg font-inter">
             Your journey to the perfect opportunity continues
           </p>
         </div>
@@ -138,7 +138,7 @@ export default function IndividualLearning() {
                 {recentJobs.map((job) => (
                   <div
                     key={job.id}
-                    className="p-4 border border-gray-200 rounded-lg hover:border-individual-red hover:shadow-md transition-all"
+                    className="p-4 border border-gray-200 rounded-lg hover:border-individual-royal hover:shadow-md transition-all"
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
@@ -262,7 +262,7 @@ export default function IndividualLearning() {
                     <span className="text-gray-500">75%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-individual-red h-2 rounded-full" style={{ width: '75%' }} />
+                    <div className="bg-individual-royal h-2 rounded-full" style={{ width: '75%' }} />
                   </div>
                 </div>
                 <div>
@@ -271,7 +271,7 @@ export default function IndividualLearning() {
                     <span className="text-gray-500">60%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-individual-beige h-2 rounded-full" style={{ width: '60%' }} />
+                    <div className="bg-individual-azure h-2 rounded-full" style={{ width: '60%' }} />
                   </div>
                 </div>
                 <div>

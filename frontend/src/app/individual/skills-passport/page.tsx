@@ -30,26 +30,26 @@ export default function SkillsPassportPage() {
     if (score >= 90) return 'text-green-600';
     if (score >= 80) return 'text-blue-600';
     if (score >= 70) return 'text-yellow-600';
-    return 'text-red-600';
+    return 'text-individual-royal-600';
   };
 
   return (
     <DashboardLayout user={user} notificationCount={3}>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-gradient-to-r from-individual-red to-red-700 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-individual-royal to-red-700 rounded-xl p-8 text-white">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold font-playfair mb-2">
                 Skills Passport
               </h1>
-              <p className="text-red-100 text-lg font-inter">
+              <p className="text-individual-royal-100 text-lg font-inter">
                 Eight-Faculty Model Assessment
               </p>
             </div>
             <div className="text-right">
               <div className="text-6xl font-bold font-crimson">{profile.overallScore}</div>
-              <div className="text-sm text-red-100">Overall Score</div>
+              <div className="text-sm text-individual-royal-100">Overall Score</div>
             </div>
           </div>
         </div>
@@ -64,13 +64,13 @@ export default function SkillsPassportPage() {
           <CardBody>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-4xl font-bold text-individual-red font-crimson">
+                <div className="text-4xl font-bold text-individual-royal font-crimson">
                   {profile.totalCompetenciesAssessed}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Competencies Assessed</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-individual-beige font-crimson">
+                <div className="text-4xl font-bold text-individual-azure font-crimson">
                   {profile.totalCompetencies}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Total Competencies</div>
@@ -85,7 +85,7 @@ export default function SkillsPassportPage() {
             <div className="mt-6">
               <div className="w-full bg-gray-200 rounded-full h-3">
                 <div
-                  className="bg-gradient-to-r from-individual-red to-individual-beige h-3 rounded-full transition-all"
+                  className="bg-gradient-to-r from-individual-royal to-individual-azure h-3 rounded-full transition-all"
                   style={{ width: `${(profile.totalCompetenciesAssessed / profile.totalCompetencies) * 100}%` }}
                 />
               </div>

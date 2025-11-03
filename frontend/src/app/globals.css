@@ -27,3 +27,190 @@ a {
   text-decoration: none;
 }
 
+@layer base {
+  :root {
+    /* Individual Citizens Dashboard - Light Mode */
+    --background: 210 75% 95%; /* #EAF4FB - Ice Blue */
+    --foreground: 211 79% 25%; /* #0B3C78 - Deep Blue */
+
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 211 79% 25%; /* #0B3C78 */
+
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 211 79% 25%; /* #0B3C78 */
+
+    --primary: 215 76% 36%; /* #164BA1 - Royal Blue */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 206 73% 70%; /* #7EBCEE - Sky Blue */
+    --secondary-foreground: 211 79% 25%; /* #0B3C78 */
+
+    --muted: 210 60% 98%; /* #F6FAFE - subtle neutral */
+    --muted-foreground: 211 44% 38%; /* #365C8A */
+
+    --accent: 20 95% 56%; /* #F87428 - Orange CTA */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 6 75% 46%; /* #CF2B1A */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --border: 209 70% 89%; /* #CFE4F6 */
+    --input: 209 70% 89%; /* #CFE4F6 */
+    --ring: 206 71% 53%; /* #2D8BE0 - Azure accent */
+
+    --radius: 0.75rem;
+
+    /* Chart & visualization palette */
+    --chart-1: 206 71% 53%; /* #2D8BE0 */
+    --chart-2: 206 73% 70%; /* #7EBCEE */
+    --chart-3: 20 95% 56%; /* #F87428 */
+    --chart-4: 20 90% 77%; /* #F8B896 */
+    --chart-5: 6 75% 46%; /* #CF2B1A */
+  }
+
+  .dark {
+    /* Individual Citizens Dashboard - Dark Mode */
+    --background: 211 79% 25%; /* #0B3C78 */
+    --foreground: 210 75% 95%; /* #EAF4FB */
+
+    --card: 215 76% 36%; /* #164BA1 */
+    --card-foreground: 210 75% 95%; /* #EAF4FB */
+
+    --popover: 215 76% 36%; /* #164BA1 */
+    --popover-foreground: 210 75% 95%; /* #EAF4FB */
+
+    --primary: 206 71% 53%; /* #2D8BE0 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 218 71% 40%; /* #1E4AAE */
+    --secondary-foreground: 210 75% 95%; /* #EAF4FB */
+
+    --muted: 211 44% 38%; /* #365C8A */
+    --muted-foreground: 209 65% 83%; /* #BBD6EE */
+
+    --accent: 20 95% 56%; /* #F87428 */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --destructive: 6 75% 46%; /* #CF2B1A */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --border: 218 71% 40%; /* #1E4AAE */
+    --input: 218 71% 40%; /* #1E4AAE */
+    --ring: 206 73% 70%; /* #7EBCEE */
+
+    --radius: 0.75rem;
+
+    --chart-1: 206 73% 70%; /* #7EBCEE */
+    --chart-2: 20 90% 77%; /* #F8B896 */
+    --chart-3: 20 95% 56%; /* #F87428 */
+    --chart-4: 6 75% 46%; /* #CF2B1A */
+    --chart-5: 0 0% 100%; /* #FFFFFF */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Individual Citizens Dashboard - Semantic CSS Variables */
+:root {
+  /* Base blues */
+  --brand-deep: #0B3C78;
+  --brand-royal: #164BA1;
+  --brand-azure: #2D8BE0;
+  --brand-sky: #7EBCEE;
+  --brand-ice: #EAF4FB;
+
+  /* Warm engagement */
+  --engage-orange: #F87428;
+  --engage-red: #CF2B1A;
+  --engage-peach: #F8B896;
+
+  /* Support */
+  --support-deep-royal: #1E4AAE;
+  --support-light-sky: #7DB5EB;
+
+  /* App tokens */
+  --bg: #EAF4FB;
+  --bg-subtle: #F6FAFE;
+  --bg-elevated: #FFFFFF;
+  --fg: #0B3C78;
+  --fg-muted: #365C8A;
+  --bd: #CFE4F6;
+  --bd-strong: #7EBCEE;
+}
+
+/* Component recipes for Individual interface */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3
+           font-semibold text-white bg-individual-royal shadow-cta hover:opacity-95
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           focus-visible:ring-individual-azure transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3
+           font-semibold text-individual-deep bg-individual-sky hover:bg-individual-azure
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+           focus-visible:ring-individual-azure transition-all duration-200;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3
+           font-semibold text-white bg-gradient-to-r from-engage-orange to-engage-red
+           shadow-cta hover:opacity-95 focus:outline-none focus-visible:ring-2
+           focus-visible:ring-offset-2 focus-visible:ring-engage-orange transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white shadow-card rounded-2xl border border-individual-ice;
+  }
+
+  .card-hover {
+    @apply bg-white shadow-card rounded-2xl border border-individual-ice
+           hover:shadow-xl hover:border-individual-sky transition-all duration-300;
+  }
+
+  .badge-token {
+    @apply inline-flex items-center rounded-pill bg-engage-orange/10 text-engage-orange
+           px-3 py-1 text-xs font-semibold;
+  }
+
+  .badge-achievement {
+    @apply inline-flex items-center rounded-pill bg-individual-azure/10 text-individual-azure
+           px-3 py-1 text-xs font-semibold;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-individual-ice bg-white px-4 py-2
+           text-individual-deep placeholder:text-individual-sky/60
+           focus:outline-none focus:ring-2 focus:ring-individual-azure
+           focus:border-transparent transition-all duration-200;
+  }
+
+  .gradient-hero {
+    @apply bg-gradient-to-r from-individual-deep to-individual-azure;
+  }
+
+  .gradient-card {
+    @apply bg-gradient-to-b from-individual-sky to-individual-ice;
+  }
+
+  .gradient-cta {
+    @apply bg-gradient-to-r from-engage-orange to-engage-red;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+

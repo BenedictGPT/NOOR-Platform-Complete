@@ -53,8 +53,8 @@ const labelSizeClasses = {
 // Color mapping for Federal theme
 const colorClasses = {
   default: 'border-gray-300 checked:bg-gray-600 checked:border-gray-600',
-  primary: 'border-individual-red/30 checked:bg-individual-red checked:border-individual-red',
-  secondary: 'border-individual-beige/30 checked:bg-individual-beige checked:border-individual-beige',
+  primary: 'border-individual-royal/30 checked:bg-individual-royal checked:border-individual-royal',
+  secondary: 'border-individual-azure/30 checked:bg-individual-azure checked:border-individual-azure',
   success: 'border-green-300 checked:bg-green-600 checked:border-green-600',
   warning: 'border-yellow-300 checked:bg-yellow-600 checked:border-yellow-600',
   danger: 'border-red-300 checked:bg-red-600 checked:border-red-600',
@@ -129,8 +129,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
             ${isInvalid ? 'border-red-500' : ''}
             ${isDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}
             peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-opacity-50
-            ${color === 'primary' ? 'peer-focus:ring-individual-red' : ''}
-            ${color === 'secondary' ? 'peer-focus:ring-individual-beige' : ''}
+            ${color === 'primary' ? 'peer-focus:ring-individual-royal' : ''}
+            ${color === 'secondary' ? 'peer-focus:ring-individual-azure' : ''}
             ${classNames.icon || ''}
           `}
         >

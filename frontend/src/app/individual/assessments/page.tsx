@@ -45,13 +45,13 @@ export default function AssessmentsPage() {
     <DashboardLayout user={user} notificationCount={3}>
       <div className="space-y-6">
         {/* Header with Token Balance */}
-        <div className="bg-gradient-to-r from-individual-red to-red-700 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-individual-royal to-red-700 rounded-xl p-8 text-white">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold font-playfair mb-2">
                 Assessments
               </h1>
-              <p className="text-red-100 text-lg font-inter">
+              <p className="text-individual-royal-100 text-lg font-inter">
                 Complete assessments to earn tokens and unlock courses
               </p>
             </div>
@@ -60,7 +60,7 @@ export default function AssessmentsPage() {
                 <span className="text-5xl">🪙</span>
                 <div className="text-6xl font-bold font-crimson">{wallet.balance}</div>
               </div>
-              <div className="text-sm text-red-100">Token Balance</div>
+              <div className="text-sm text-individual-royal-100">Token Balance</div>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function AssessmentsPage() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardBody>
               <div className="text-center">
-                <div className="text-4xl font-bold text-individual-red font-crimson">
+                <div className="text-4xl font-bold text-individual-royal font-crimson">
                   {completedCount}/{totalCount}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Assessments Completed</div>
@@ -100,7 +100,7 @@ export default function AssessmentsPage() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardBody>
               <div className="text-center">
-                <div className="text-4xl font-bold text-individual-beige font-crimson">
+                <div className="text-4xl font-bold text-individual-azure font-crimson">
                   {Math.round((completedCount / totalCount) * 100)}%
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Completion Rate</div>

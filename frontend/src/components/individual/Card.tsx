@@ -3,14 +3,16 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const cardVariants = cva(
-  'rounded-lg transition-shadow',
+  'rounded-2xl transition-all duration-300',
   {
     variants: {
       variant: {
-        default: 'bg-white border border-neutral-200',
-        elevated: 'bg-white shadow-md hover:shadow-lg',
-        outlined: 'bg-white border-2 border-primary-200',
-        gradient: 'bg-gradient-primary text-white',
+        default: 'bg-white border border-individual-ice shadow-card',
+        elevated: 'bg-white shadow-card hover:shadow-xl border border-individual-ice hover:border-individual-sky',
+        outlined: 'bg-white border-2 border-individual-azure',
+        gradient: 'bg-gradient-to-b from-individual-sky to-individual-ice text-individual-deep',
+        hero: 'bg-gradient-to-r from-individual-deep to-individual-azure text-white',
+        accent: 'bg-engage-orange/10 border border-engage-orange/20',
       },
       padding: {
         none: 'p-0',
@@ -39,7 +41,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         className={cn(
           cardVariants({ variant, padding }),
-          hoverable && 'cursor-pointer hover:shadow-lg',
+          hoverable && 'cursor-pointer hover:shadow-xl hover:border-individual-sky',
           className
         )}
         {...props}
@@ -69,7 +71,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn('text-2xl font-semibold leading-none tracking-tight text-secondary-900', className)}
+    className={cn('text-2xl font-semibold font-heading leading-none tracking-tight text-individual-deep', className)}
     {...props}
   />
 ));
@@ -82,7 +84,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn('text-sm text-neutral-600', className)}
+    className={cn('text-sm text-individual-sky/80', className)}
     {...props}
   />
 ));

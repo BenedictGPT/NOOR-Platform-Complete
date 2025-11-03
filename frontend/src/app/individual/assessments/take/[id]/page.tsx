@@ -241,7 +241,7 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
                     onClick={() => handleAnswer(option)}
                     className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
                       answers[question.id] === option
-                        ? 'border-individual-red bg-red-50'
+                        ? 'border-individual-royal bg-individual-royal-50'
                         : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
@@ -249,7 +249,7 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
                       <div 
                         className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
                           answers[question.id] === option
-                            ? 'border-individual-red bg-individual-red'
+                            ? 'border-individual-royal bg-individual-royal'
                             : 'border-gray-300'
                         }`}
                       >
@@ -271,7 +271,7 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
                           onClick={() => handleAnswer(index)}
                           className={`flex-1 p-4 rounded-lg border-2 text-center transition-all ${
                             answers[question.id] === index
-                              ? 'border-individual-red bg-red-50'
+                              ? 'border-individual-royal bg-individual-royal-50'
                               : 'border-gray-200 hover:border-gray-300'
                           }`}
                         >
@@ -300,7 +300,7 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
                       onClick={() => handleAnswer('false')}
                       className={`p-6 rounded-lg border-2 text-center transition-all ${
                         answers[question.id] === 'false'
-                          ? 'border-red-500 bg-red-50'
+                          ? 'border-individual-royal-500 bg-individual-royal-50'
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                     >
@@ -318,7 +318,7 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
                         onClick={() => handleAnswer(index)}
                         className={`w-full p-4 rounded-lg border-2 text-left transition-all ${
                           answers[question.id] === index
-                            ? 'border-individual-red bg-red-50'
+                            ? 'border-individual-royal bg-individual-royal-50'
                             : 'border-gray-200 hover:border-gray-300'
                         }`}
                       >

@@ -56,7 +56,7 @@ export default function WalletPage() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardBody>
               <div className="text-center">
-                <div className="text-4xl font-bold text-red-600 font-crimson">
+                <div className="text-4xl font-bold text-individual-royal-600 font-crimson">
                   {wallet.totalSpent}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">Total Spent</div>
@@ -130,13 +130,13 @@ export default function WalletPage() {
                   className={`flex items-center justify-between p-4 rounded-lg border-2 ${
                     transaction.type === 'earn'
                       ? 'border-green-200 bg-green-50'
-                      : 'border-red-200 bg-red-50'
+                      : 'border-individual-royal-200 bg-individual-royal-50'
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <div
                       className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl ${
-                        transaction.type === 'earn' ? 'bg-green-100' : 'bg-red-100'
+                        transaction.type === 'earn' ? 'bg-green-100' : 'bg-individual-royal-100'
                       }`}
                     >
                       {transaction.type === 'earn' ? '📈' : '📚'}
@@ -152,7 +152,7 @@ export default function WalletPage() {
                   <div className="text-right">
                     <div
                       className={`text-2xl font-bold ${
-                        transaction.type === 'earn' ? 'text-green-600' : 'text-red-600'
+                        transaction.type === 'earn' ? 'text-green-600' : 'text-individual-royal-600'
                       }`}
                     >
                       {transaction.type === 'earn' ? '+' : '-'}
@@ -176,7 +176,7 @@ export default function WalletPage() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-3xl font-bold text-individual-red">
+                  <div className="text-3xl font-bold text-individual-royal">
                     Level {progress.level}
                   </div>
                   <div className="text-sm text-gray-600">
@@ -194,7 +194,7 @@ export default function WalletPage() {
               </div>
               <div className="w-full bg-gray-200 rounded-full h-4">
                 <div
-                  className="bg-gradient-to-r from-individual-red to-individual-beige h-4 rounded-full transition-all"
+                  className="bg-gradient-to-r from-individual-royal to-individual-azure h-4 rounded-full transition-all"
                   style={{ width: `${(progress.experiencePoints / progress.nextLevelXP) * 100}%` }}
                 />
               </div>

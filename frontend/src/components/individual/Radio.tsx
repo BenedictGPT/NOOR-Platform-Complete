@@ -100,8 +100,8 @@ const dotSizeClasses = {
 // Color mapping for Federal theme
 const colorClasses = {
   default: 'border-gray-300 checked:border-gray-600',
-  primary: 'border-individual-red/30 checked:border-individual-red',
-  secondary: 'border-individual-beige/30 checked:border-individual-beige',
+  primary: 'border-individual-royal/30 checked:border-individual-royal',
+  secondary: 'border-individual-azure/30 checked:border-individual-azure',
   success: 'border-green-300 checked:border-green-600',
   warning: 'border-yellow-300 checked:border-yellow-600',
   danger: 'border-red-300 checked:border-red-600',
@@ -109,8 +109,8 @@ const colorClasses = {
 
 const dotColorClasses = {
   default: 'bg-gray-600',
-  primary: 'bg-individual-red',
-  secondary: 'bg-individual-beige',
+  primary: 'bg-individual-royal',
+  secondary: 'bg-individual-azure',
   success: 'bg-green-600',
   warning: 'bg-yellow-600',
   danger: 'bg-red-600',
@@ -257,8 +257,8 @@ export const Radio: React.FC<RadioProps> = ({
             ${colorClasses[color]}
             ${isDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}
             peer-focus:ring-2 peer-focus:ring-offset-2 peer-focus:ring-opacity-50
-            ${color === 'primary' ? 'peer-focus:ring-individual-red' : ''}
-            ${color === 'secondary' ? 'peer-focus:ring-individual-beige' : ''}
+            ${color === 'primary' ? 'peer-focus:ring-individual-royal' : ''}
+            ${color === 'secondary' ? 'peer-focus:ring-individual-azure' : ''}
             ${classNames.control || ''}
           `}
         >

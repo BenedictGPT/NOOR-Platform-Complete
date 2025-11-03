@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`bg-individual-beige text-white ${className}`}>
+    <footer className={`bg-individual-azure text-white ${className}`}>
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Section */}
@@ -43,27 +43,27 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <h4 className="text-sm font-semibold mb-4 font-cairo">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/individual/dashboard" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/dashboard" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Dashboard
                 </Link>
               </li>
               <li>
-                <Link href="/individual/opportunities" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/opportunities" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Opportunities
                 </Link>
               </li>
               <li>
-                <Link href="/individual/applications" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/applications" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Applications
                 </Link>
               </li>
               <li>
-                <Link href="/individual/analytics" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/analytics" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Analytics
                 </Link>
               </li>
               <li>
-                <Link href="/individual/reports" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/reports" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Reports
                 </Link>
               </li>
@@ -75,27 +75,27 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
             <h4 className="text-sm font-semibold mb-4 font-cairo">Support</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/individual/help" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/help" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="/individual/contact" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/contact" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/individual/privacy" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/privacy" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/individual/terms" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/terms" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="/individual/accessibility" className="text-sm text-gray-300 hover:text-individual-red transition-colors">
+                <Link href="/individual/accessibility" className="text-sm text-gray-300 hover:text-individual-royal transition-colors">
                   Accessibility
                 </Link>
               </li>
@@ -116,7 +116,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 href="https://twitter.com/uaegov"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-individual-red transition-colors"
+                className="text-gray-300 hover:text-individual-royal transition-colors"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -128,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 href="https://linkedin.com/company/uaegov"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-individual-red transition-colors"
+                className="text-gray-300 hover:text-individual-royal transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ className = '' }) => {
                 href="https://instagram.com/uaegov"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-individual-red transition-colors"
+                className="text-gray-300 hover:text-individual-royal transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

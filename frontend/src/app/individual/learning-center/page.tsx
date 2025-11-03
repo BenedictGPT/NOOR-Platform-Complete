@@ -56,13 +56,13 @@ export default function LearningCenterPage() {
     <DashboardLayout user={user} notificationCount={3}>
       <div className="space-y-6">
         {/* Header */}
-        <div className="bg-gradient-to-r from-individual-red to-red-700 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-individual-royal to-red-700 rounded-xl p-8 text-white">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold font-playfair mb-2">
                 Learning Center
               </h1>
-              <p className="text-red-100 text-lg font-inter">
+              <p className="text-individual-royal-100 text-lg font-inter">
                 Unlock courses with tokens, expand your skills
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function LearningCenterPage() {
                 <span className="text-5xl">🪙</span>
                 <div className="text-6xl font-bold font-crimson">{wallet.balance}</div>
               </div>
-              <div className="text-sm text-red-100">Available Tokens</div>
+              <div className="text-sm text-individual-royal-100">Available Tokens</div>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function LearningCenterPage() {
           <Card className="hover:shadow-lg transition-shadow">
             <CardBody>
               <div className="text-center">
-                <div className="text-4xl font-bold text-individual-red font-crimson">
+                <div className="text-4xl font-bold text-individual-royal font-crimson">
                   {myCourses.length}
                 </div>
                 <div className="text-sm text-gray-600 mt-1">My Courses</div>
@@ -303,7 +303,7 @@ export default function LearningCenterPage() {
                       <div className="flex items-center gap-1">
                         <span className="text-2xl">🪙</span>
                         <span className={`text-lg font-bold ${
-                          canAfford ? 'text-green-600' : 'text-red-600'
+                          canAfford ? 'text-green-600' : 'text-individual-royal-600'
                         }`}>
                           {course.tokenCost}
                         </span>
@@ -354,7 +354,7 @@ export default function LearningCenterPage() {
                 <div className="bg-gray-50 rounded-lg p-4 mb-4">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-gray-600">Course Cost:</span>
-                    <span className="text-2xl font-bold text-red-600">
+                    <span className="text-2xl font-bold text-individual-royal-600">
                       🪙 {selectedCourse.tokenCost}
                     </span>
                   </div>

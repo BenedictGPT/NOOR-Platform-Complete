@@ -8,7 +8,7 @@ export interface BadgeProps {
   
   // Appearance
   variant?: 'solid' | 'flat' | 'bordered' | 'dot';
-  color?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger';
+  color?: 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'token' | 'achievement';
   size?: 'sm' | 'md' | 'lg';
   
   // Positioning (when used as notification badge)
@@ -29,9 +29,9 @@ export interface BadgeProps {
 
 // Size mapping
 const sizeClasses = {
-  sm: 'text-xs px-1.5 py-0.5 min-w-[18px] h-[18px]',
-  md: 'text-sm px-2 py-0.5 min-w-[20px] h-[20px]',
-  lg: 'text-base px-2.5 py-1 min-w-[24px] h-[24px]',
+  sm: 'text-xs px-2 py-0.5 min-w-[18px] h-[18px]',
+  md: 'text-sm px-3 py-1 min-w-[20px] h-[20px]',
+  lg: 'text-base px-4 py-1.5 min-w-[24px] h-[24px]',
 };
 
 // Dot size mapping
@@ -41,7 +41,7 @@ const dotSizeClasses = {
   lg: 'w-3 h-3',
 };
 
-// Color mapping for Federal theme
+// Color mapping for Individual theme - NEW BLUE PALETTE
 const colorVariants = {
   default: {
     solid: 'bg-gray-600 text-white',
@@ -50,16 +50,16 @@ const colorVariants = {
     dot: 'bg-gray-500',
   },
   primary: {
-    solid: 'bg-individual-red text-white',
-    flat: 'bg-individual-red/10 text-individual-red',
-    bordered: 'bg-transparent text-individual-red border-individual-red',
-    dot: 'bg-individual-red',
+    solid: 'bg-individual-royal text-white',
+    flat: 'bg-individual-royal/10 text-individual-royal',
+    bordered: 'bg-transparent text-individual-royal border-individual-royal',
+    dot: 'bg-individual-royal',
   },
   secondary: {
-    solid: 'bg-individual-beige text-white',
-    flat: 'bg-individual-beige/10 text-individual-beige',
-    bordered: 'bg-transparent text-individual-beige border-individual-beige',
-    dot: 'bg-individual-beige',
+    solid: 'bg-individual-azure text-white',
+    flat: 'bg-individual-azure/10 text-individual-azure',
+    bordered: 'bg-transparent text-individual-azure border-individual-azure',
+    dot: 'bg-individual-azure',
   },
   success: {
     solid: 'bg-green-600 text-white',
@@ -74,10 +74,22 @@ const colorVariants = {
     dot: 'bg-yellow-500',
   },
   danger: {
-    solid: 'bg-red-600 text-white',
-    flat: 'bg-red-100 text-red-700',
-    bordered: 'bg-transparent text-red-700 border-red-500',
-    dot: 'bg-red-500',
+    solid: 'bg-individual-royal text-white',
+    flat: 'bg-individual-royal/10 text-individual-royal',
+    bordered: 'bg-transparent text-individual-royal border-individual-royal',
+    dot: 'bg-individual-royal',
+  },
+  token: {
+    solid: 'bg-engage-orange text-white',
+    flat: 'bg-engage-orange/10 text-engage-orange',
+    bordered: 'bg-transparent text-engage-orange border-engage-orange',
+    dot: 'bg-engage-orange',
+  },
+  achievement: {
+    solid: 'bg-gradient-to-r from-individual-azure to-individual-sky text-white',
+    flat: 'bg-individual-azure/10 text-individual-azure',
+    bordered: 'bg-transparent text-individual-azure border-individual-azure',
+    dot: 'bg-individual-azure',
   },
 };
 
@@ -111,7 +123,7 @@ export const Badge: React.FC<BadgeProps> = ({
             className={`
               absolute ${placementClasses[placement]}
               flex items-center justify-center
-              rounded-full font-semibold
+              rounded-pill font-semibold
               ${sizeClasses[size]}
               ${colorVariants[color][variant]}
               ${variant === 'bordered' ? 'border' : ''}
@@ -152,7 +164,7 @@ export const Badge: React.FC<BadgeProps> = ({
     <span
       className={`
         inline-flex items-center justify-center
-        rounded-full font-medium
+        rounded-pill font-semibold
         ${sizeClasses[size]}
         ${colorVariants[color][variant]}
         ${variant === 'bordered' ? 'border' : ''}
