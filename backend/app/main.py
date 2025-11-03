@@ -18,6 +18,11 @@ from app.api.v1.router import api_router
 from app.db.postgres import init_postgres
 from app.db.mongodb import init_mongodb
 from app.db.redis import init_redis
+from app.middleware import (
+    RateLimitMiddleware,
+    SecurityHeadersMiddleware,
+    CORSSecurityMiddleware
+)
 
 # Setup logging
 setup_logging()
@@ -72,6 +77,17 @@ app.add_middleware(
 
 # GZip Compression
 app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+# Security Headers Middleware
+app.add_middleware(SecurityHeadersMiddleware)
+
+# Rate Limiting Middleware
+# 60 requests per minute, 1000 requests per hour
+app.add_middleware(
+    RateLimitMiddleware,
+    requests_per_minute=60,
+    requests_per_hour=1000
+)
 
 
 # Request Timing Middleware
