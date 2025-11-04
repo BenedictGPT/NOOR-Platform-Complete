@@ -200,7 +200,7 @@ def main():
             f"ANTHROPIC_API_KEY={secrets_dict['ANTHROPIC_API_KEY']}",
             f"OPENAI_API_KEY={secrets_dict['OPENAI_API_KEY']}",
             "",
-            "DATABASE_URL=postgresql://user:${DATABASE_PASSWORD}@localhost:5432/noor",
+            f"DATABASE_URL=postgresql://user:{secrets_dict['DATABASE_PASSWORD']}@localhost:5432/noor",
             "REDIS_URL=redis://localhost:6379",
             "",
             "DEBUG=true",
