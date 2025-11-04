@@ -136,7 +136,7 @@ def main():
     env_content.append("SUPABASE_SERVICE_ROLE_KEY=your-service-role-key")
     env_content.append("")
     env_content.append("# Redis Configuration")
-    env_content.append("REDIS_URL=redis://:${REDIS_PASSWORD}@localhost:6379")
+    env_content.append(f"REDIS_URL=redis://:{secrets_dict['REDIS_PASSWORD']}@localhost:6379")
     env_content.append("")
     env_content.append("# AI Model Configuration")
     env_content.append("DEFAULT_MODEL=claude-3-5-sonnet-20241022")
