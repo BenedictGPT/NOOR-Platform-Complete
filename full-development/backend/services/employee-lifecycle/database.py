@@ -9,6 +9,7 @@ from pymongo import MongoClient
 from motor.motor_asyncio import AsyncIOMotorClient
 import redis.asyncio as aioredis
 from typing import AsyncGenerator
+import asyncio
 import logging
 
 from config import get_settings
@@ -94,7 +95,6 @@ async def connect_mongodb():
 
 async def close_mongodb():
     """Close MongoDB connection"""
-    global mongodb_client
     if mongodb_client:
         mongodb_client.close()
         logger.info("MongoDB connection closed")
@@ -133,7 +133,6 @@ async def connect_redis():
 
 async def close_redis():
     """Close Redis connection"""
-    global redis_client
     if redis_client:
         await redis_client.close()
         logger.info("Redis connection closed")

@@ -44,7 +44,6 @@ async def close_mongodb():
     """
     Close MongoDB connection
     """
-    global mongodb_client
     if mongodb_client:
         mongodb_client.close()
         logger.info("MongoDB connection closed")

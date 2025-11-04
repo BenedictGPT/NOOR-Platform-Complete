@@ -12,3 +12,14 @@ node_modules/
 **/node_modules/
 .next/
 **/.next/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
