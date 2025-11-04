@@ -6,7 +6,6 @@ Generates secure random secrets for environment configuration
 
 import secrets
 import string
-import hashlib
 import os
 import sys
 from pathlib import Path
