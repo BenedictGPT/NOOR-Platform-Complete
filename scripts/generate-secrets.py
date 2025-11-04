@@ -183,7 +183,6 @@ def main():
             "NEXTAUTH_URL=http://localhost:3000",
             "",
             "NEXT_PUBLIC_API_URL=http://localhost:8000",
-            f"NEXT_PUBLIC_ANTHROPIC_API_KEY={secrets_dict['ANTHROPIC_API_KEY']}",
             "",
             "# Supabase",
             "NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co",
