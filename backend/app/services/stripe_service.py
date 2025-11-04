@@ -8,8 +8,10 @@ import stripe
 from typing import Dict, Optional
 from datetime import datetime
 
-# Initialize Stripe
-stripe.api_key = os.getenv("STRIPE_SECRET_KEY", "sb_secret_UTXcpkk5Zk4z7rnObCj-aA_jj7wfnD6")
+# Initialize Stripe - MUST be set via environment variable
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+if not stripe.api_key:
+    raise ValueError("STRIPE_SECRET_KEY environment variable is required")
 
 # Token Purchase Packages
 TOKEN_PACKAGES = {

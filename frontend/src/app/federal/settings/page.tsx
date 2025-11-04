@@ -127,7 +127,7 @@ export default function SettingsPage() {
                       <Input
                         label="Full Name"
                         defaultValue="Ahmed Al Mansoori"
-                        isRequired
+                        required
                       />
                       <Input
                         label="Job Title"
@@ -137,7 +137,7 @@ export default function SettingsPage() {
                         label="Email"
                         type="email"
                         defaultValue="ahmed.almansoori@uae.gov.ae"
-                        isRequired
+                        required
                       />
                       <Input
                         label="Phone"
@@ -150,7 +150,7 @@ export default function SettingsPage() {
                       <Input
                         label="Employee ID"
                         defaultValue="FED-2024-001"
-                        isDisabled
+                        disabled
                       />
                     </div>
 
@@ -164,7 +164,7 @@ export default function SettingsPage() {
                       <Button variant="outline">
                         Cancel
                       </Button>
-                      <Button color="primary" onPress={handleSave}>
+                      <Button color="primary" onClick={handleSave}>
                         Save Changes
                       </Button>
                     </div>
@@ -186,7 +186,7 @@ export default function SettingsPage() {
                     <Input
                       label="Username"
                       defaultValue="ahmed.almansoori"
-                      description="This is your unique identifier"
+                      helperText="This is your unique identifier"
                     />
 
                     <div className="pt-4 border-t border-gray-200">
@@ -232,7 +232,7 @@ export default function SettingsPage() {
                       <Button variant="outline">
                         Cancel
                       </Button>
-                      <Button color="primary" onPress={handleSave}>
+                      <Button color="primary" onClick={handleSave}>
                         Save Changes
                       </Button>
                     </div>
@@ -309,7 +309,7 @@ export default function SettingsPage() {
                       <Button variant="outline">
                         Cancel
                       </Button>
-                      <Button color="primary" onPress={handleSave}>
+                      <Button color="primary" onClick={handleSave}>
                         Save Preferences
                       </Button>
                     </div>
@@ -390,7 +390,7 @@ export default function SettingsPage() {
                     </div>
 
                     <div className="flex justify-end">
-                      <Button color="primary" onPress={handleSave}>
+                      <Button color="primary" onClick={handleSave}>
                         Save Settings
                       </Button>
                     </div>
@@ -457,7 +457,7 @@ export default function SettingsPage() {
                       <Button variant="outline">
                         Reset to Defaults
                       </Button>
-                      <Button color="primary" onPress={handleSave}>
+                      <Button color="primary" onClick={handleSave}>
                         Save Preferences
                       </Button>
                     </div>

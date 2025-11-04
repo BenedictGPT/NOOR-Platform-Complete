@@ -298,7 +298,7 @@ export default function HCMDashboardPage() {
                           <span className="font-semibold">{need.targetAverage}</span>
                         </div>
                       </div>
-                      <Button size="sm" variant="outline" fullWidth className="mt-3">
+                      <Button size="sm" variant="outline" className="w-full mt-3">
                         Create Training Program
                       </Button>
                     </div>
@@ -354,16 +354,16 @@ export default function HCMDashboardPage() {
 
         {/* Actions */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Button color="primary" fullWidth>
+          <Button color="primary" className="w-full">
             Export Report
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" className="w-full">
             Schedule Assessments
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" className="w-full">
             View Trends
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" className="w-full">
             Compare Departments
           </Button>
         </div>

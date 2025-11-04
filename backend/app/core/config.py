@@ -21,8 +21,8 @@ class Settings(BaseSettings):
     # API
     API_V1_PREFIX: str = "/api/v1"
     
-    # Security
-    SECRET_KEY: str = "your-secret-key-here-change-in-production"
+    # Security - NO DEFAULTS FOR SECRETS
+    SECRET_KEY: str  # REQUIRED - Set via environment variable
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
@@ -38,7 +38,7 @@ class Settings(BaseSettings):
     POSTGRES_HOST: str = "localhost"
     POSTGRES_PORT: int = 5432
     POSTGRES_USER: str = "noor"
-    POSTGRES_PASSWORD: str = "noor_password"
+    POSTGRES_PASSWORD: str  # REQUIRED - Set via environment variable
     POSTGRES_DB: str = "noor_db"
     
     @property
@@ -49,11 +49,11 @@ class Settings(BaseSettings):
     def ASYNC_POSTGRES_URL(self) -> str:
         return f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@{self.POSTGRES_HOST}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
     
-    # MongoDB
+    # MongoDB (Optional)
     MONGODB_HOST: str = "localhost"
     MONGODB_PORT: int = 27017
     MONGODB_USER: str = "noor"
-    MONGODB_PASSWORD: str = "noor_password"
+    MONGODB_PASSWORD: Optional[str] = None
     MONGODB_DB: str = "noor_logs"
     
     @property
@@ -72,16 +72,16 @@ class Settings(BaseSettings):
             return f"redis://:{self.REDIS_PASSWORD}@{self.REDIS_HOST}:{self.REDIS_PORT}/{self.REDIS_DB}"
         return f"redis://{self.REDIS_HOST}:{self.REDIS_PORT}/{self.REDIS_DB}"
     
-    # Neo4j
+    # Neo4j (Optional)
     NEO4J_URI: str = "bolt://localhost:7687"
     NEO4J_USER: str = "neo4j"
-    NEO4J_PASSWORD: str = "noor_password"
-    
-    # Elasticsearch
+    NEO4J_PASSWORD: Optional[str] = None
+
+    # Elasticsearch (Optional)
     ELASTICSEARCH_HOST: str = "localhost"
     ELASTICSEARCH_PORT: int = 9200
     ELASTICSEARCH_USER: str = "elastic"
-    ELASTICSEARCH_PASSWORD: str = "noor_password"
+    ELASTICSEARCH_PASSWORD: Optional[str] = None
     
     @property
     def ELASTICSEARCH_URL(self) -> str:
@@ -152,9 +152,14 @@ class Settings(BaseSettings):
     # Rate Limiting
     RATE_LIMIT_PER_MINUTE: int = 60
     
+    # Stripe Payment
+    STRIPE_SECRET_KEY: Optional[str] = None
+    STRIPE_PUBLISHABLE_KEY: Optional[str] = None
+    STRIPE_WEBHOOK_SECRET: Optional[str] = None
+
     # Monitoring
     SENTRY_DSN: Optional[str] = None
-    
+
     # Celery
     CELERY_BROKER_URL: str = "redis://localhost:6379/1"
     CELERY_RESULT_BACKEND: str = "redis://localhost:6379/2"

@@ -332,7 +332,7 @@ export default function ApplicationsPage() {
             Showing 1 to {mockApplications.length} of {mockApplications.length} results
           </p>
           <div className="flex gap-2">
-            <Button size="sm" variant="outline" isDisabled>
+            <Button size="sm" variant="outline" disabled>
               Previous
             </Button>
             <Button size="sm" color="primary">
