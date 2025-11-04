@@ -1,0 +1,11 @@
+name: noor-ci
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pytest
+  - flake8
+  - pip:
+      # Add PyPI-only packages here if needed
+      # - some-pypi-package==1.2.3
