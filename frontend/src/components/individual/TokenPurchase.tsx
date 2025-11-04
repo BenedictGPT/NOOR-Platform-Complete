@@ -104,10 +104,11 @@ export const TokenPurchase: React.FC = () => {
               </div>
 
               <Button
-                variant="primary"
+                variant="solid"
+                color="primary"
                 fullWidth
                 onClick={() => handlePurchase(pkg.id)}
-                disabled={loading === pkg.id}
+                isDisabled={loading === pkg.id}
               >
                 {loading === pkg.id ? 'Processing...' : 'Purchase Now'}
               </Button>

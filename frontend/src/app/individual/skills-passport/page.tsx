@@ -215,7 +215,7 @@ export default function SkillsPassportPage() {
                           <div className="text-xs text-gray-600">Recommended for improvement</div>
                         </div>
                       </div>
-                      <Button size="sm" variant="outline" color="primary">
+                      <Button size="sm" variant="bordered" color="primary">
                         Improve
                       </Button>
                     </div>
@@ -308,10 +308,10 @@ export default function SkillsPassportPage() {
           <Button color="primary" fullWidth>
             Take New Assessment
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="bordered" fullWidth>
             Share with Employer
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="bordered" fullWidth>
             Download Report
           </Button>
         </div>

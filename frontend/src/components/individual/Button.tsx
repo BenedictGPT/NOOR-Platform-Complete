@@ -16,6 +16,7 @@ export interface ButtonProps {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const variantStyles = {
@@ -86,6 +87,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   type = 'button',
   className = '',
+  style,
 }) => {
   const handleClick = () => {
     if (!isDisabled && !isLoading) {
@@ -99,6 +101,7 @@ export const Button: React.FC<ButtonProps> = ({
       type={type}
       onClick={handleClick}
       disabled={isDisabled || isLoading}
+      style={style}
       className={`
         inline-flex items-center justify-center gap-2
         font-semibold font-inter rounded-pill

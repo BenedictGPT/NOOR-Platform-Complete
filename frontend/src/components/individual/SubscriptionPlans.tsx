@@ -162,7 +162,7 @@ export const SubscriptionPlans: React.FC = () => {
                 fullWidth
                 size="lg"
                 onClick={() => handleSubscribe(plan.id)}
-                disabled={loading === plan.id}
+                isDisabled={loading === plan.id}
               >
                 {loading === plan.id ? 'Processing...' : 'Subscribe Now'}
               </Button>

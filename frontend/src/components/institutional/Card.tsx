@@ -32,6 +32,10 @@ export interface CardProps
   hoverable?: boolean;
 }
 
+export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface CardBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
+export interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
+
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant, padding, hoverable, ...props }, ref) => {
     return (

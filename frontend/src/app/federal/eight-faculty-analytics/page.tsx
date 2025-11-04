@@ -313,7 +313,7 @@ export default function EightFacultyAnalyticsPage() {
                           </div>
                         </div>
                       </div>
-                      <Button size="sm" variant="outline" fullWidth>
+                      <Button size="sm" variant="outline" className="w-full">
                         Create National Initiative
                       </Button>
                     </div>
@@ -421,16 +421,16 @@ export default function EightFacultyAnalyticsPage() {
 
         {/* Actions */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Button color="primary" fullWidth>
+          <Button color="primary" className="w-full">
             Export National Report
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" className="w-full">
             Compare Ministries
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" className="w-full">
             View Historical Data
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="outline" className="w-full">
             Download Dataset
           </Button>
         </div>

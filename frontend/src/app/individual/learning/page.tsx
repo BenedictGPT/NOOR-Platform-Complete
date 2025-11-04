@@ -180,23 +180,23 @@ export default function IndividualLearning() {
             </CardHeader>
             <CardBody>
               <div className="space-y-3">
-                <Button variant="outline" fullWidth className="justify-start" color="primary">
+                <Button variant="bordered" fullWidth className="justify-start" color="primary">
                   <span className="text-xl mr-2">📋</span>
                   Update Skills Passport
                 </Button>
-                <Button variant="outline" fullWidth className="justify-start">
+                <Button variant="bordered" fullWidth className="justify-start">
                   <span className="text-xl mr-2">🔍</span>
                   Search Jobs
                 </Button>
-                <Button variant="outline" fullWidth className="justify-start">
+                <Button variant="bordered" fullWidth className="justify-start">
                   <span className="text-xl mr-2">📚</span>
                   Browse Courses
                 </Button>
-                <Button variant="outline" fullWidth className="justify-start">
+                <Button variant="bordered" fullWidth className="justify-start">
                   <span className="text-xl mr-2">👤</span>
                   Edit Profile
                 </Button>
-                <Button variant="outline" fullWidth className="justify-start">
+                <Button variant="bordered" fullWidth className="justify-start">
                   <span className="text-xl mr-2">⭐</span>
                   View Achievements
                 </Button>

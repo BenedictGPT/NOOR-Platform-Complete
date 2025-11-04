@@ -297,10 +297,10 @@ export default function AssessmentsPage() {
           <Button color="primary" fullWidth>
             View My Progress
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="bordered" fullWidth>
             Browse Learning Center
           </Button>
-          <Button variant="outline" fullWidth>
+          <Button variant="bordered" fullWidth>
             Join Team Challenge
           </Button>
         </div>

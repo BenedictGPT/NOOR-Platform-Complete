@@ -321,7 +321,7 @@ export default function LearningCenterPage() {
                           Unlock
                         </Button>
                       ) : (
-                        <Button size="sm" variant="outline" disabled>
+                        <Button size="sm" variant="bordered" isDisabled>
                           🔒 Locked
                         </Button>
                       )}
@@ -338,7 +338,6 @@ export default function LearningCenterPage() {
           isOpen={isOpen}
           onClose={onClose}
           size="md"
-          title="Unlock Course"
         >
           {selectedCourse && (
             <div className="space-y-4">
@@ -386,7 +385,7 @@ export default function LearningCenterPage() {
               </div>
 
               <div className="flex gap-3">
-                <Button variant="outline" fullWidth onClick={onClose}>
+                <Button variant="bordered" fullWidth onClick={onClose}>
                   Cancel
                 </Button>
                 <Button color="primary" fullWidth onClick={confirmUnlock}>

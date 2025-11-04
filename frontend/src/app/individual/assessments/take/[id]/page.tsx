@@ -152,7 +152,7 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
                   <Button color="primary" size="lg" fullWidth onClick={handleFinish}>
                     View All Assessments
                   </Button>
-                  <Button variant="outline" size="lg" fullWidth onClick={() => router.push('/individual/learning-center')}>
+                  <Button variant="bordered" size="lg" fullWidth onClick={() => router.push('/individual/learning-center')}>
                     Browse Learning Center
                   </Button>
                 </div>
@@ -348,9 +348,9 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
         {/* Navigation */}
         <div className="flex items-center justify-between gap-4">
           <Button
-            variant="outline"
+            variant="bordered"
             onClick={handlePrevious}
-            disabled={currentQuestion === 0}
+            isDisabled={currentQuestion === 0}
           >
             ← Previous
           </Button>
@@ -360,7 +360,7 @@ export default function TakeAssessmentPage({ params }: { params: { id: string } 
           <Button
             color="primary"
             onClick={handleNext}
-            disabled={answers[question.id] === undefined}
+            isDisabled={answers[question.id] === undefined}
           >
             {currentQuestion === questions.length - 1 ? 'Finish' : 'Next →'}
           </Button>
