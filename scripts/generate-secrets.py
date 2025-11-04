@@ -101,16 +101,8 @@ def main():
     # Create .env file
     project_root = Path(__file__).parent.parent
     env_file = project_root / '.env'
-    env_template_file = project_root / '.env.example'
 
     print(f"Creating .env file at: {env_file}")
-
-    # Read template if it exists
-    template_content = ""
-    if env_template_file.exists():
-        with open(env_template_file, 'r') as f:
-            template_content = f.read()
-        print(f"Using template from: {env_template_file}")
 
     # Create .env content
     env_content = []
