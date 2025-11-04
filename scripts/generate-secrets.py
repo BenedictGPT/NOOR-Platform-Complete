@@ -145,7 +145,7 @@ def main():
     env_content.append("# Frontend URL")
     env_content.append("NEXT_PUBLIC_API_URL=http://localhost:8000")
     env_content.append("NEXTAUTH_URL=http://localhost:3000")
-    env_content.append("NEXTAUTH_SECRET=${JWT_SECRET}")
+    env_content.append(f"NEXTAUTH_SECRET={secrets_dict['JWT_SECRET']}")
     env_content.append("")
     env_content.append("# Email Configuration (Update with your SMTP details)")
     env_content.append("SMTP_HOST=smtp.gmail.com")
