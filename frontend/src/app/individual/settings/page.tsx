@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { SettingsLayout } from '@/components/individual/layout';
+import { DashboardLayout } from '@/components/individual/layout';
 import { Card, CardHeader, CardBody } from '@/components/individual/Card';
 import { Button } from '@/components/individual/Button';
 import { Badge } from '@/components/individual/Badge';
@@ -88,7 +88,7 @@ export default function IndividualSettings() {
   };
 
   return (
-    <SettingsLayout user={user} notificationCount={3}>
+    <DashboardLayout user={user} notificationCount={3}>
       <div className="space-y-6">
         {/* Welcome Header */}
         <div className="bg-gradient-to-r from-individual-royal to-red-700 rounded-xl p-8 text-white">
@@ -321,7 +321,7 @@ export default function IndividualSettings() {
           </Card>
         </div>
       </div>
-    </SettingsLayout>
+    </DashboardLayout>
   );
 }
 
