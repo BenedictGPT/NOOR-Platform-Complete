@@ -131,7 +131,7 @@ def main():
     env_content.append("BACKEND_PORT=8000")
     env_content.append("")
     env_content.append("# Database Configuration")
-    env_content.append("DATABASE_URL=postgresql://user:${DATABASE_PASSWORD}@localhost:5432/noor")
+    env_content.append(f"DATABASE_URL=postgresql://user:{secrets_dict['DATABASE_PASSWORD']}@localhost:5432/noor")
     env_content.append("SUPABASE_URL=https://your-project.supabase.co")
     env_content.append("SUPABASE_ANON_KEY=your-anon-key")
     env_content.append("SUPABASE_SERVICE_ROLE_KEY=your-service-role-key")
