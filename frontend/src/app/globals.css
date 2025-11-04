@@ -226,9 +226,8 @@ a {
   }
 }
 
-
-
-  /* Institutional Interface utility classes */
+/* Institutional Interface utility classes */
+@layer components {
   .btn-institutional-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3
            font-semibold text-white bg-institutional-burgundy shadow-cta hover:bg-institutional-crimson
@@ -270,6 +269,7 @@ a {
     @apply bg-gradient-to-r from-institutional-gold to-institutional-amber;
   }
 }
+
 
 /* Utility classes */
 @layer utilities {
