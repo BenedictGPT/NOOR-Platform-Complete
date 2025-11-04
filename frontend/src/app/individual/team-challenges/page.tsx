@@ -335,7 +335,7 @@ export default function TeamChallengesPage() {
                           Join Team
                         </Button>
                       ) : (
-                        <Button size="sm" variant="bordered" disabled>
+                        <Button size="sm" variant="outline" disabled>
                           Team Full
                         </Button>
                       )}
@@ -384,10 +384,10 @@ export default function TeamChallengesPage() {
           <Button color="primary" fullWidth>
             Create Team Challenge
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             View Leaderboard
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             My Team History
           </Button>
         </div>

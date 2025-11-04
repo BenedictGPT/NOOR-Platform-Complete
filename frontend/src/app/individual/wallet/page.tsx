@@ -284,10 +284,10 @@ export default function WalletPage() {
           <Button color="primary" fullWidth>
             Earn More Tokens
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             Browse Courses
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             View Leaderboard
           </Button>
         </div>

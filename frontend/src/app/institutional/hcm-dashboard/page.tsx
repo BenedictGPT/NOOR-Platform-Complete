@@ -150,7 +150,7 @@ export default function HCMDashboardPage() {
               <h2 className="text-xl font-semibold text-gray-900">
                 Department Performance
               </h2>
-              <Button variant="light" size="sm" color="primary">
+              <Button variant="ghost" size="sm" color="primary">
                 View All Departments
               </Button>
             </div>
@@ -298,7 +298,7 @@ export default function HCMDashboardPage() {
                           <span className="font-semibold">{need.targetAverage}</span>
                         </div>
                       </div>
-                      <Button size="sm" variant="bordered" fullWidth className="mt-3">
+                      <Button size="sm" variant="outline" fullWidth className="mt-3">
                         Create Training Program
                       </Button>
                     </div>
@@ -357,13 +357,13 @@ export default function HCMDashboardPage() {
           <Button color="primary" fullWidth>
             Export Report
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             Schedule Assessments
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             View Trends
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             Compare Departments
           </Button>
         </div>
@@ -382,7 +382,7 @@ export default function HCMDashboardPage() {
                   Data is automatically synchronized and feeds into Federal-level analytics for national workforce insights.
                 </p>
               </div>
-              <Button variant="light" size="sm">
+              <Button variant="ghost" size="sm">
                 Learn More
               </Button>
             </div>

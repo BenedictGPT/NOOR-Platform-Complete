@@ -128,7 +128,7 @@ export default function IndividualProfile() {
                 <h2 className="text-xl font-semibold text-gray-900 font-playfair">
                   Recommended for You
                 </h2>
-                <Button variant="light" size="sm" color="primary">
+                <Button variant="ghost" size="sm" color="primary">
                   View All
                 </Button>
               </div>
@@ -180,23 +180,23 @@ export default function IndividualProfile() {
             </CardHeader>
             <CardBody>
               <div className="space-y-3">
-                <Button variant="bordered" fullWidth className="justify-start" color="primary">
+                <Button variant="outline" fullWidth className="justify-start" color="primary">
                   <span className="text-xl mr-2">📋</span>
                   Update Skills Passport
                 </Button>
-                <Button variant="bordered" fullWidth className="justify-start">
+                <Button variant="outline" fullWidth className="justify-start">
                   <span className="text-xl mr-2">🔍</span>
                   Search Jobs
                 </Button>
-                <Button variant="bordered" fullWidth className="justify-start">
+                <Button variant="outline" fullWidth className="justify-start">
                   <span className="text-xl mr-2">📚</span>
                   Browse Courses
                 </Button>
-                <Button variant="bordered" fullWidth className="justify-start">
+                <Button variant="outline" fullWidth className="justify-start">
                   <span className="text-xl mr-2">👤</span>
                   Edit Profile
                 </Button>
-                <Button variant="bordered" fullWidth className="justify-start">
+                <Button variant="outline" fullWidth className="justify-start">
                   <span className="text-xl mr-2">⭐</span>
                   View Achievements
                 </Button>
@@ -212,7 +212,7 @@ export default function IndividualProfile() {
               <h2 className="text-xl font-semibold text-gray-900 font-playfair">
                 My Applications
               </h2>
-              <Button variant="light" size="sm" color="primary">
+              <Button variant="ghost" size="sm" color="primary">
                 View All
               </Button>
             </div>

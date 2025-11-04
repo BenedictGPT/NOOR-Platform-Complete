@@ -215,7 +215,7 @@ export default function SkillsPassportPage() {
                           <div className="text-xs text-gray-600">Recommended for improvement</div>
                         </div>
                       </div>
-                      <Button size="sm" variant="bordered" color="primary">
+                      <Button size="sm" variant="outline" color="primary">
                         Improve
                       </Button>
                     </div>
@@ -293,7 +293,7 @@ export default function SkillsPassportPage() {
                     </div>
                   </div>
                   {verification.certificateUrl && (
-                    <Button size="sm" variant="light" color="primary">
+                    <Button size="sm" variant="ghost" color="primary">
                       View Certificate
                     </Button>
                   )}
@@ -308,10 +308,10 @@ export default function SkillsPassportPage() {
           <Button color="primary" fullWidth>
             Take New Assessment
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             Share with Employer
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             Download Report
           </Button>
         </div>

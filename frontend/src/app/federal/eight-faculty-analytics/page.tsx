@@ -226,7 +226,7 @@ export default function EightFacultyAnalyticsPage() {
                 <h2 className="text-xl font-semibold text-gray-900 font-cairo">
                   Ministry Performance
                 </h2>
-                <Button variant="light" size="sm" color="primary">
+                <Button variant="ghost" size="sm" color="primary">
                   View All
                 </Button>
               </div>
@@ -313,7 +313,7 @@ export default function EightFacultyAnalyticsPage() {
                           </div>
                         </div>
                       </div>
-                      <Button size="sm" variant="bordered" fullWidth>
+                      <Button size="sm" variant="outline" fullWidth>
                         Create National Initiative
                       </Button>
                     </div>
@@ -424,13 +424,13 @@ export default function EightFacultyAnalyticsPage() {
           <Button color="primary" fullWidth>
             Export National Report
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             Compare Ministries
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             View Historical Data
           </Button>
-          <Button variant="bordered" fullWidth>
+          <Button variant="outline" fullWidth>
             Download Dataset
           </Button>
         </div>

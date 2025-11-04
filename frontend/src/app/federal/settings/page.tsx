@@ -113,7 +113,7 @@ export default function SettingsPage() {
                         A
                       </div>
                       <div>
-                        <Button size="sm" variant="bordered">
+                        <Button size="sm" variant="outline">
                           Change Photo
                         </Button>
                         <p className="text-xs text-gray-500 mt-2">
@@ -161,7 +161,7 @@ export default function SettingsPage() {
                     />
 
                     <div className="flex justify-end gap-3">
-                      <Button variant="bordered">
+                      <Button variant="outline">
                         Cancel
                       </Button>
                       <Button color="primary" onPress={handleSave}>
@@ -229,7 +229,7 @@ export default function SettingsPage() {
                     </div>
 
                     <div className="flex justify-end gap-3">
-                      <Button variant="bordered">
+                      <Button variant="outline">
                         Cancel
                       </Button>
                       <Button color="primary" onPress={handleSave}>
@@ -306,7 +306,7 @@ export default function SettingsPage() {
                     </div>
 
                     <div className="flex justify-end gap-3">
-                      <Button variant="bordered">
+                      <Button variant="outline">
                         Cancel
                       </Button>
                       <Button color="primary" onPress={handleSave}>
@@ -454,7 +454,7 @@ export default function SettingsPage() {
                     </div>
 
                     <div className="flex justify-end gap-3">
-                      <Button variant="bordered">
+                      <Button variant="outline">
                         Reset to Defaults
                       </Button>
                       <Button color="primary" onPress={handleSave}>

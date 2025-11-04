@@ -317,10 +317,10 @@ export default function OpportunitiesPage() {
                       <p className="text-xs text-red-600 font-medium">{opportunity.deadline}</p>
                     </div>
                     <div className="flex gap-2">
-                      <Button size="sm" variant="light">
+                      <Button size="sm" variant="ghost">
                         View
                       </Button>
-                      <Button size="sm" variant="bordered">
+                      <Button size="sm" variant="outline">
                         Edit
                       </Button>
                     </div>
@@ -337,19 +337,19 @@ export default function OpportunitiesPage() {
             Showing 1 to {mockOpportunities.length} of {mockOpportunities.length} results
           </p>
           <div className="flex gap-2">
-            <Button size="sm" variant="bordered" isDisabled>
+            <Button size="sm" variant="outline" isDisabled>
               Previous
             </Button>
             <Button size="sm" color="primary">
               1
             </Button>
-            <Button size="sm" variant="bordered">
+            <Button size="sm" variant="outline">
               2
             </Button>
-            <Button size="sm" variant="bordered">
+            <Button size="sm" variant="outline">
               3
             </Button>
-            <Button size="sm" variant="bordered">
+            <Button size="sm" variant="outline">
               Next
             </Button>
           </div>

@@ -310,10 +310,10 @@ export default function ApplicationsPage() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <div className="flex items-center justify-end gap-2">
-                          <Button size="sm" variant="light">
+                          <Button size="sm" variant="ghost">
                             View
                           </Button>
-                          <Button size="sm" variant="bordered" color="primary">
+                          <Button size="sm" variant="outline" color="primary">
                             Review
                           </Button>
                         </div>
@@ -332,19 +332,19 @@ export default function ApplicationsPage() {
             Showing 1 to {mockApplications.length} of {mockApplications.length} results
           </p>
           <div className="flex gap-2">
-            <Button size="sm" variant="bordered" isDisabled>
+            <Button size="sm" variant="outline" isDisabled>
               Previous
             </Button>
             <Button size="sm" color="primary">
               1
             </Button>
-            <Button size="sm" variant="bordered">
+            <Button size="sm" variant="outline">
               2
             </Button>
-            <Button size="sm" variant="bordered">
+            <Button size="sm" variant="outline">
               3
             </Button>
-            <Button size="sm" variant="bordered">
+            <Button size="sm" variant="outline">
               Next
             </Button>
           </div>

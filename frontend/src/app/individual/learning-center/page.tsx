@@ -321,7 +321,7 @@ export default function LearningCenterPage() {
                           Unlock
                         </Button>
                       ) : (
-                        <Button size="sm" variant="bordered" disabled>
+                        <Button size="sm" variant="outline" disabled>
                           🔒 Locked
                         </Button>
                       )}
@@ -386,7 +386,7 @@ export default function LearningCenterPage() {
               </div>
 
               <div className="flex gap-3">
-                <Button variant="bordered" fullWidth onClick={onClose}>
+                <Button variant="outline" fullWidth onClick={onClose}>
                   Cancel
                 </Button>
                 <Button color="primary" fullWidth onClick={confirmUnlock}>
