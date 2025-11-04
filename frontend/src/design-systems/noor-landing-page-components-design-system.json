@@ -1,0 +1,1018 @@
+{
+  "designSystem": {
+    "project": "NOOR Platform - Landing Page Components",
+    "version": "1.0.0",
+    "lastUpdated": "2025-11-04",
+    "description": "Comprehensive design system for NOOR landing page interactive components including particle effects, card animations, and navigation",
+    "theme": {
+      "name": "Dark/Black Theme",
+      "primaryFont": "SUSE Mono",
+      "colorPalette": {
+        "backgrounds": {
+          "deepCharcoal": "#0A0A0A",
+          "charcoal": "#1A1A1A",
+          "graphite": "#2A2A2A",
+          "slate": "#3A3A3A"
+        },
+        "accents": {
+          "radiantGold": "#FFD700",
+          "warmGold": "#F0C040",
+          "softGold": "#E8B86D",
+          "paleGold": "#F5E6D3"
+        },
+        "dashboardIdentity": {
+          "individualAzure": "#2D8BE0",
+          "institutionalBurgundy": "#7A0A0A",
+          "federalBlue": "#1E3A5F"
+        },
+        "text": {
+          "primary": "#FFFFFF",
+          "secondary": "#E5E7EB",
+          "tertiary": "#9CA3AF",
+          "disabled": "#6B7280"
+        }
+      }
+    },
+    "components": [
+      {
+        "componentName": "Particles",
+        "componentType": "Background Effect / Visual Enhancement",
+        "technology": "React + OGL (WebGL)",
+        "file": "Particles.tsx",
+        "purpose": "Creates an animated 3D particle field using WebGL for immersive background effects on the hero section",
+        "visualDescription": "Spherical cloud of floating particles with continuous rotation and optional mouse interaction. Particles gently float and pulse with customizable colors and sizes.",
+        "usageContext": [
+          "Hero section background",
+          "Full-screen immersive landing sections",
+          "Premium visual enhancement",
+          "Creates 'illumination' effect consistent with NOOR branding"
+        ],
+        "specifications": {
+          "rendering": {
+            "engine": "OGL (WebGL library)",
+            "renderMode": "Canvas-based 3D",
+            "performance": "GPU-accelerated",
+            "transparency": true,
+            "depthTest": false
+          },
+          "defaultBehavior": {
+            "distribution": "Spherical (uniform within unit sphere)",
+            "animation": "Continuous sinusoidal movement",
+            "rotation": "Gentle x, y, z axis rotation",
+            "sizing": "Perspective-based with distance falloff"
+          }
+        },
+        "props": {
+          "particleCount": {
+            "type": "number",
+            "default": 200,
+            "range": "50-1000",
+            "description": "Total number of particles to render",
+            "performanceNote": "Higher counts (>500) may impact performance on low-end devices",
+            "recommended": {
+              "mobile": "100-150",
+              "tablet": "150-250",
+              "desktop": "200-400",
+              "highEnd": "400-1000"
+            }
+          },
+          "particleSpread": {
+            "type": "number",
+            "default": 10,
+            "range": "1-50",
+            "description": "Controls the overall size of the particle cloud",
+            "visualImpact": "Larger values create more dispersed, spacious feel"
+          },
+          "speed": {
+            "type": "number",
+            "default": 0.1,
+            "range": "0.01-2.0",
+            "description": "Animation speed multiplier",
+            "recommended": {
+              "subtle": "0.05-0.1",
+              "moderate": "0.1-0.3",
+              "energetic": "0.3-0.5",
+              "fast": "0.5-1.0"
+            }
+          },
+          "particleColors": {
+            "type": "string[]",
+            "default": ["#ffffff", "#ffffff", "#ffffff"],
+            "description": "Array of hex colors for particle palette. Particles randomly select from array.",
+            "noorRecommended": [
+              ["#FFD700", "#F0C040", "#E8B86D"],
+              ["#FFFFFF", "#E5E7EB", "#9CA3AF"],
+              ["#FFD700", "#FFFFFF", "#F0C040"],
+              ["#2D8BE0", "#FFD700", "#FFFFFF"]
+            ],
+            "usage": "Mix gold and white for NOOR brand consistency"
+          },
+          "moveParticlesOnHover": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enables mouse-tracking parallax effect",
+            "uxConsideration": "Creates immersive interaction but may distract from content",
+            "recommended": "true for hero sections, false for sections with important content"
+          },
+          "particleHoverFactor": {
+            "type": "number",
+            "default": 1,
+            "range": "0.1-5.0",
+            "description": "Multiplier for mouse parallax movement intensity",
+            "onlyActiveWhen": "moveParticlesOnHover === true",
+            "recommended": {
+              "subtle": "0.5-1.0",
+              "moderate": "1.0-2.0",
+              "dramatic": "2.0-5.0"
+            }
+          },
+          "alphaParticles": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enables alpha transparency for softer, glowing particles",
+            "visualDifference": {
+              "false": "Sharp-edged circular particles with hard cutoff",
+              "true": "Soft-edged glowing particles with smooth alpha falloff"
+            },
+            "noorRecommended": true,
+            "reason": "Soft glow aligns with 'illumination' theme"
+          },
+          "particleBaseSize": {
+            "type": "number",
+            "default": 100,
+            "range": "20-500",
+            "description": "Base size for particles (in WebGL units, affected by distance)",
+            "visualImpact": "Higher values create larger, more prominent particles",
+            "recommended": {
+              "subtle": "50-100",
+              "balanced": "100-200",
+              "prominent": "200-400"
+            }
+          },
+          "sizeRandomness": {
+            "type": "number",
+            "default": 1,
+            "range": "0-2.0",
+            "description": "Amount of random size variation between particles",
+            "visualImpact": {
+              "0": "All particles uniform size",
+              "1": "Moderate variation (±50%)",
+              "2": "High variation (±100%)"
+            },
+            "noorRecommended": "0.8-1.2 for natural organic feel"
+          },
+          "cameraDistance": {
+            "type": "number",
+            "default": 20,
+            "range": "5-100",
+            "description": "Camera distance from particle cloud center",
+            "visualImpact": {
+              "low (5-15)": "Inside/close to particles, immersive",
+              "medium (15-30)": "Comfortable viewing distance",
+              "high (30-100)": "Distant view, particles appear smaller"
+            },
+            "noorRecommended": "18-25 for hero sections"
+          },
+          "disableRotation": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disables continuous rotation animation",
+            "whenToUse": "Enable when rotation feels too busy or distracting",
+            "performanceNote": "No performance benefit, purely aesthetic choice"
+          },
+          "className": {
+            "type": "string",
+            "default": "undefined",
+            "description": "Additional CSS classes for container div",
+            "usage": "For positioning and sizing adjustments"
+          }
+        },
+        "implementationGuidelines": {
+          "mounting": {
+            "behavior": "Creates canvas element and appends to container on mount",
+            "cleanup": "Removes canvas and cancels animation frame on unmount",
+            "rerender": "Full re-initialization on prop changes"
+          },
+          "performance": {
+            "gpuAcceleration": "Requires WebGL support",
+            "fallback": "No automatic fallback - component won't render without WebGL",
+            "optimization": "Uses requestAnimationFrame for smooth 60fps animation",
+            "memoryManagement": "Proper cleanup prevents memory leaks"
+          },
+          "accessibility": {
+            "prefersReducedMotion": "Not currently implemented - should be added",
+            "recommendation": "Wrap in media query check or add prop to disable animation"
+          },
+          "responsive": {
+            "behavior": "Listens to window resize events and adjusts canvas size",
+            "aspectRatio": "Maintains aspect ratio of container",
+            "mobile": "Consider reducing particleCount for performance"
+          }
+        },
+        "noorSpecificUsage": {
+          "heroSection": {
+            "particleCount": 300,
+            "particleSpread": 12,
+            "speed": 0.08,
+            "particleColors": ["#FFD700", "#F0C040", "#FFFFFF"],
+            "moveParticlesOnHover": true,
+            "particleHoverFactor": 1.2,
+            "alphaParticles": true,
+            "particleBaseSize": 120,
+            "sizeRandomness": 0.9,
+            "cameraDistance": 22,
+            "disableRotation": false,
+            "className": "absolute inset-0 z-0 pointer-events-none"
+          },
+          "philosophySection": {
+            "particleCount": 150,
+            "particleSpread": 8,
+            "speed": 0.05,
+            "particleColors": ["#E8B86D", "#9CA3AF", "#6B7280"],
+            "moveParticlesOnHover": false,
+            "alphaParticles": true,
+            "particleBaseSize": 80,
+            "sizeRandomness": 1.2,
+            "cameraDistance": 25,
+            "disableRotation": false,
+            "className": "absolute inset-0 z-0 opacity-30 pointer-events-none"
+          }
+        },
+        "codeExample": {
+          "basic": "import Particles from './components/Particles';\n\n<div className=\"relative w-full h-screen bg-[#0A0A0A]\">\n  <Particles\n    particleCount={300}\n    particleColors={['#FFD700', '#F0C040', '#FFFFFF']}\n    alphaParticles={true}\n    moveParticlesOnHover={true}\n    className=\"absolute inset-0 z-0\"\n  />\n  <div className=\"relative z-10\">{/* Your content */}</div>\n</div>",
+          "advanced": "import Particles from './components/Particles';\nimport { useMediaQuery } from './hooks/useMediaQuery';\n\nconst Hero = () => {\n  const isMobile = useMediaQuery('(max-width: 768px)');\n  \n  return (\n    <div className=\"relative w-full h-screen bg-[#0A0A0A]\">\n      <Particles\n        particleCount={isMobile ? 150 : 300}\n        particleSpread={12}\n        speed={0.08}\n        particleColors={['#FFD700', '#F0C040', '#FFFFFF']}\n        moveParticlesOnHover={!isMobile}\n        particleHoverFactor={1.2}\n        alphaParticles={true}\n        particleBaseSize={isMobile ? 80 : 120}\n        cameraDistance={22}\n        className=\"absolute inset-0 z-0 pointer-events-none\"\n      />\n      <div className=\"relative z-10\">{/* Hero content */}</div>\n    </div>\n  );\n};"
+        },
+        "browserSupport": {
+          "required": "WebGL 1.0+",
+          "browsers": {
+            "chrome": "56+",
+            "firefox": "51+",
+            "safari": "11+",
+            "edge": "79+"
+          },
+          "notes": "Will not render on browsers without WebGL support"
+        }
+      },
+      {
+        "componentName": "CardSwap",
+        "componentType": "Interactive Animation / Content Showcase",
+        "technology": "React + GSAP (GreenSock Animation Platform)",
+        "file": "CardSwap.tsx",
+        "purpose": "Creates an automated stacked card animation that cycles through cards with 3D perspective effects",
+        "visualDescription": "Stack of cards positioned with 3D depth. Front card periodically drops down and moves to back while remaining cards promote forward. Creates dynamic, engaging showcase effect.",
+        "usageContext": [
+          "Dashboard preview showcase on landing page",
+          "Feature highlights",
+          "Testimonial carousels",
+          "Product showcases",
+          "Any content requiring sequential presentation with visual impact"
+        ],
+        "specifications": {
+          "animation": {
+            "engine": "GSAP (GreenSock)",
+            "type": "Timeline-based sequenced animations",
+            "transforms": "3D CSS transforms with perspective",
+            "easing": "Configurable (elastic or power)",
+            "sequencing": "Coordinated multi-card movements"
+          },
+          "layout": {
+            "positioning": "Absolute positioning with 3D transforms",
+            "perspective": "900px default",
+            "stackDirection": "Cards recede in x, y, and z axes",
+            "zIndex": "Managed dynamically based on card order"
+          }
+        },
+        "props": {
+          "width": {
+            "type": "number | string",
+            "default": 500,
+            "description": "Width of each card (px or CSS string)",
+            "examples": ["500", "'100%'", "'30vw'"],
+            "noorRecommended": "360-500px for dashboard previews"
+          },
+          "height": {
+            "type": "number | string",
+            "default": 400,
+            "description": "Height of each card (px or CSS string)",
+            "aspectRatio": "Maintains 3:4 portrait ratio in design system",
+            "noorRecommended": "480-640px for dashboard previews"
+          },
+          "cardDistance": {
+            "type": "number",
+            "default": 60,
+            "range": "20-200",
+            "description": "Horizontal distance between stacked cards (px)",
+            "visualImpact": "Larger values = more spread out stack"
+          },
+          "verticalDistance": {
+            "type": "number",
+            "default": 70,
+            "range": "20-200",
+            "description": "Vertical distance between stacked cards (px)",
+            "visualImpact": "Affects staircase effect depth"
+          },
+          "delay": {
+            "type": "number",
+            "default": 5000,
+            "unit": "milliseconds",
+            "range": "2000-15000",
+            "description": "Time between automatic card swaps",
+            "recommended": {
+              "fast": "2000-3000",
+              "moderate": "4000-6000",
+              "slow": "7000-10000"
+            },
+            "noorRecommended": "5000-6000 for dashboard previews"
+          },
+          "pauseOnHover": {
+            "type": "boolean",
+            "default": false,
+            "description": "Pauses animation when user hovers over component",
+            "uxBenefit": "Allows users to examine current card without distraction",
+            "noorRecommended": true
+          },
+          "onCardClick": {
+            "type": "(idx: number) => void",
+            "default": "undefined",
+            "description": "Callback fired when a card is clicked",
+            "parameters": {
+              "idx": "Index of clicked card (0-based)"
+            },
+            "noorUsage": "Navigate to respective dashboard route"
+          },
+          "skewAmount": {
+            "type": "number",
+            "default": 6,
+            "range": "0-15",
+            "unit": "degrees",
+            "description": "Vertical skew applied to cards for 3D effect",
+            "visualImpact": {
+              "0": "No skew, flat appearance",
+              "3-6": "Subtle 3D depth",
+              "6-12": "Noticeable 3D effect",
+              "12+": "Exaggerated perspective"
+            }
+          },
+          "easing": {
+            "type": "'linear' | 'elastic'",
+            "default": "elastic",
+            "description": "Animation easing style",
+            "options": {
+              "elastic": {
+                "ease": "elastic.out(0.6,0.9)",
+                "durDrop": 2,
+                "durMove": 2,
+                "durReturn": 2,
+                "character": "Bouncy, playful, energetic"
+              },
+              "linear": {
+                "ease": "power1.inOut",
+                "durDrop": 0.8,
+                "durMove": 0.8,
+                "durReturn": 0.8,
+                "character": "Smooth, professional, predictable"
+              }
+            },
+            "noorRecommended": "elastic for hero sections, linear for professional contexts"
+          },
+          "children": {
+            "type": "ReactNode",
+            "required": true,
+            "description": "Card components to be animated",
+            "expectedType": "Multiple <Card> components",
+            "minimum": 2,
+            "recommended": "3-5 cards for optimal visual effect"
+          }
+        },
+        "subComponents": {
+          "Card": {
+            "description": "Individual card component within CardSwap",
+            "type": "forwardRef<HTMLDivElement>",
+            "purpose": "Wrapper for card content with consistent styling",
+            "props": {
+              "customClass": {
+                "type": "string",
+                "description": "Additional CSS classes for the card",
+                "usage": "Override or extend default card styles"
+              },
+              "...rest": {
+                "type": "React.HTMLAttributes<HTMLDivElement>",
+                "description": "All standard div props are passed through",
+                "includes": ["onClick", "style", "aria-*", "data-*"]
+              }
+            },
+            "defaultStyles": {
+              "position": "absolute",
+              "top": "50%",
+              "left": "50%",
+              "borderRadius": "12px (rounded-xl)",
+              "border": "1px solid white",
+              "background": "black",
+              "transformStyle": "preserve-3d",
+              "willChange": "transform",
+              "backfaceVisibility": "hidden"
+            }
+          }
+        },
+        "animationSequence": {
+          "step1": {
+            "name": "Drop",
+            "target": "Front card",
+            "action": "Animates downward (y += 500)",
+            "duration": "Configurable (durDrop)",
+            "effect": "Card appears to fall out of frame"
+          },
+          "step2": {
+            "name": "Promote",
+            "target": "All remaining cards",
+            "action": "Move forward one position in stack",
+            "stagger": "0.15s between cards",
+            "effect": "Creates cascading forward motion"
+          },
+          "step3": {
+            "name": "Return",
+            "target": "Dropped card",
+            "action": "Moves to back position of stack",
+            "zIndexUpdate": "Changed before movement begins",
+            "effect": "Card reappears at back seamlessly"
+          },
+          "step4": {
+            "name": "Order Update",
+            "target": "Internal state",
+            "action": "Updates card order array",
+            "effect": "Prepares for next cycle"
+          }
+        },
+        "implementationGuidelines": {
+          "gsapUsage": {
+            "timelines": "Creates new timeline for each swap",
+            "labels": "Uses labels for precise timing coordination",
+            "kills": "Properly kills timelines on cleanup",
+            "overwrite": "Uses 'auto' overwrite mode for smooth transitions"
+          },
+          "performance": {
+            "transforms": "Uses GPU-accelerated CSS transforms (translate3d)",
+            "willChange": "Applied to optimize rendering",
+            "force3D": true,
+            "repaints": "Minimized through transform-only animations"
+          },
+          "responsive": {
+            "breakpoints": {
+              "desktop": "Full size at bottom-right",
+              "tablet": "75% scale with adjusted positioning",
+              "mobile": "55% scale with adjusted positioning"
+            },
+            "positioning": "Uses transform translate percentages",
+            "overflow": "Visible to allow cards to extend beyond container"
+          },
+          "accessibility": {
+            "keyboard": "No keyboard navigation currently implemented",
+            "screenReader": "Cards are standard divs, content should be semantic",
+            "motion": "No prefers-reduced-motion support - should be added"
+          }
+        },
+        "noorSpecificUsage": {
+          "dashboardShowcase": {
+            "width": 400,
+            "height": 520,
+            "cardDistance": 50,
+            "verticalDistance": 60,
+            "delay": 5500,
+            "pauseOnHover": true,
+            "skewAmount": 5,
+            "easing": "elastic",
+            "cards": [
+              {
+                "title": "Individual Dashboard",
+                "color": "#2D8BE0",
+                "preview": "Screenshot or illustration"
+              },
+              {
+                "title": "Institutional Dashboard",
+                "color": "#7A0A0A",
+                "preview": "Screenshot or illustration"
+              },
+              {
+                "title": "Federal Dashboard",
+                "color": "#1E3A5F",
+                "preview": "Screenshot or illustration"
+              }
+            ]
+          }
+        },
+        "codeExample": {
+          "basic": "import CardSwap, { Card } from './components/CardSwap';\n\n<CardSwap\n  width={400}\n  height={500}\n  delay={5000}\n  pauseOnHover={true}\n  easing=\"elastic\"\n>\n  <Card>\n    <div>Card 1 Content</div>\n  </Card>\n  <Card>\n    <div>Card 2 Content</div>\n  </Card>\n  <Card>\n    <div>Card 3 Content</div>\n  </Card>\n</CardSwap>",
+          "noorDashboards": "import CardSwap, { Card } from './components/CardSwap';\nimport { useNavigate } from 'react-router-dom';\n\nconst DashboardShowcase = () => {\n  const navigate = useNavigate();\n  \n  const dashboards = [\n    { title: 'Individual', route: '/dashboard/individual', color: '#2D8BE0' },\n    { title: 'Institutional', route: '/dashboard/institutional', color: '#7A0A0A' },\n    { title: 'Federal', route: '/dashboard/federal', color: '#1E3A5F' }\n  ];\n  \n  return (\n    <CardSwap\n      width={400}\n      height={520}\n      cardDistance={50}\n      verticalDistance={60}\n      delay={5500}\n      pauseOnHover={true}\n      skewAmount={5}\n      easing=\"elastic\"\n      onCardClick={(idx) => navigate(dashboards[idx].route)}\n    >\n      {dashboards.map((dash, i) => (\n        <Card key={i} customClass=\"cursor-pointer hover:shadow-2xl transition-shadow\">\n          <div className=\"w-full h-full p-8 flex flex-col\" style={{ borderColor: dash.color }}>\n            <h3 className=\"text-2xl font-bold mb-4\" style={{ color: dash.color }}>\n              {dash.title} Dashboard\n            </h3>\n            <div className=\"flex-1 bg-[#1A1A1A] rounded-lg p-4\">\n              {/* Dashboard preview/screenshot */}\n            </div>\n          </div>\n        </Card>\n      ))}\n    </CardSwap>\n  );\n};"
+        },
+        "styling": {
+          "containerClasses": "absolute bottom-0 right-0 transform translate-x-[5%] translate-y-[20%] origin-bottom-right perspective-[900px] overflow-visible",
+          "responsiveClasses": {
+            "tablet": "max-[768px]:translate-x-[25%] max-[768px]:translate-y-[25%] max-[768px]:scale-[0.75]",
+            "mobile": "max-[480px]:translate-x-[25%] max-[480px]:translate-y-[25%] max-[480px]:scale-[0.55]"
+          },
+          "cardDefaults": "absolute top-1/2 left-1/2 rounded-xl border border-white bg-black",
+          "customization": "Override via Card customClass prop or inline styles"
+        },
+        "browserSupport": {
+          "required": "CSS 3D Transforms support",
+          "browsers": {
+            "chrome": "36+",
+            "firefox": "16+",
+            "safari": "9+",
+            "edge": "12+"
+          },
+          "fallback": "Consider 2D transform fallback for older browsers"
+        }
+      },
+      {
+        "componentName": "PillNav",
+        "componentType": "Navigation / Header",
+        "technology": "React + GSAP + React Router",
+        "file": "PillNav.tsx",
+        "purpose": "Premium animated navigation with pill-style links and sophisticated hover effects",
+        "visualDescription": "Circular logo followed by rounded pill-shaped navigation items. On hover, circular background expands from bottom creating elegant reveal effect. Mobile: hamburger menu with slide-down dropdown.",
+        "usageContext": [
+          "Main site navigation",
+          "Landing page header",
+          "Fixed/sticky navigation bar",
+          "Premium brand presentation"
+        ],
+        "specifications": {
+          "animation": {
+            "engine": "GSAP",
+            "hoverEffect": "Circular background expansion from bottom",
+            "labelAnimation": "Text slides up while white overlay slides in",
+            "logoAnimation": "360° rotation on hover",
+            "mobileMenu": "Fade and slide animation"
+          },
+          "layout": {
+            "desktop": "Horizontal logo + pill menu",
+            "mobile": "Logo + hamburger menu with dropdown",
+            "positioning": "Absolute top positioning with z-index 1000"
+          },
+          "routing": {
+            "reactRouter": "Uses react-router-dom Link component",
+            "externalLinks": "Falls back to standard <a> tags",
+            "detection": "Automatically detects internal vs external links"
+          }
+        },
+        "props": {
+          "logo": {
+            "type": "string",
+            "required": true,
+            "description": "URL or path to logo image",
+            "format": "Any image format (SVG, PNG, JPG, WebP)",
+            "noorRecommended": "SVG for scalability, transparent background"
+          },
+          "logoAlt": {
+            "type": "string",
+            "default": "Logo",
+            "description": "Alt text for logo image",
+            "accessibility": "Important for screen readers",
+            "noorValue": "NOOR Platform Logo"
+          },
+          "items": {
+            "type": "PillNavItem[]",
+            "required": true,
+            "description": "Array of navigation items",
+            "structure": {
+              "label": "Display text (string, required)",
+              "href": "Link destination (string, required)",
+              "ariaLabel": "Accessibility label (string, optional)"
+            },
+            "minimum": 1,
+            "recommended": "3-5 items for optimal visual balance",
+            "noorExample": [
+              { "label": "About", "href": "/about" },
+              { "label": "Vision 2071", "href": "/vision" },
+              { "label": "Contact", "href": "/contact" }
+            ]
+          },
+          "activeHref": {
+            "type": "string",
+            "default": "undefined",
+            "description": "Current active route for visual indicator",
+            "effect": "Shows gold dot below active nav item",
+            "usage": "Pass current pathname from router"
+          },
+          "className": {
+            "type": "string",
+            "default": "''",
+            "description": "Additional CSS classes for nav element",
+            "usage": "Positioning and layout adjustments"
+          },
+          "ease": {
+            "type": "string",
+            "default": "power3.easeOut",
+            "description": "GSAP easing function for animations",
+            "options": [
+              "power1.easeOut",
+              "power2.easeOut",
+              "power3.easeOut",
+              "power4.easeOut",
+              "elastic.out(1, 0.3)",
+              "back.out(1.7)"
+            ],
+            "noorRecommended": "power3.easeOut for smooth, professional feel"
+          },
+          "baseColor": {
+            "type": "string",
+            "default": "#fff",
+            "description": "Background color of navigation container",
+            "noorValue": "#FFD700 (radiant gold) or #FFFFFF (white)",
+            "usage": "CSS color value (hex, rgb, hsl)"
+          },
+          "pillColor": {
+            "type": "string",
+            "default": "#060010",
+            "description": "Background color of individual pills",
+            "noorValue": "#0A0A0A (deep charcoal) or #1A1A1A (charcoal)",
+            "contrast": "Should contrast with baseColor"
+          },
+          "hoveredPillTextColor": {
+            "type": "string",
+            "default": "#060010",
+            "description": "Text color when pill is hovered (white overlay text)",
+            "noorValue": "#0A0A0A (matches dark theme) or #1A1A1A",
+            "usage": "Color of text that appears during hover animation"
+          },
+          "pillTextColor": {
+            "type": "string",
+            "default": "baseColor",
+            "description": "Default text color of pills",
+            "fallback": "Uses baseColor if not specified",
+            "noorValue": "#FFD700 (gold) or #FFFFFF (white)"
+          },
+          "onMobileMenuClick": {
+            "type": "() => void",
+            "default": "undefined",
+            "description": "Callback fired when mobile menu is toggled",
+            "usage": "Track analytics or trigger side effects"
+          },
+          "initialLoadAnimation": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enables scale/width animation on component mount",
+            "effect": {
+              "logo": "Scales from 0 to 1",
+              "navItems": "Width expands from 0 to auto"
+            },
+            "duration": "0.6s",
+            "recommendation": "true for landing pages, false for instant render"
+          }
+        },
+        "dataTypes": {
+          "PillNavItem": {
+            "label": {
+              "type": "string",
+              "required": true,
+              "description": "Text displayed in navigation pill"
+            },
+            "href": {
+              "type": "string",
+              "required": true,
+              "description": "Navigation destination (route or URL)"
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "description": "Accessibility label (defaults to label if not provided)"
+            }
+          }
+        },
+        "animations": {
+          "hoverSequence": {
+            "circle": {
+              "initial": "scale: 0, positioned at bottom center",
+              "hover": "scale: 1.2, expanding circular background",
+              "duration": "2s",
+              "ease": "configurable",
+              "transformOrigin": "bottom center of calculated circle"
+            },
+            "labelDefault": {
+              "initial": "y: 0",
+              "hover": "y: -(height + 8)",
+              "duration": "2s",
+              "effect": "Slides up and out of view"
+            },
+            "labelHover": {
+              "initial": "y: height + 100, opacity: 0",
+              "hover": "y: 0, opacity: 1",
+              "duration": "2s",
+              "effect": "Slides up into view"
+            }
+          },
+          "logoHover": {
+            "initial": "rotate: 0deg",
+            "hover": "rotate: 360deg",
+            "duration": "0.2s",
+            "effect": "Full rotation"
+          },
+          "mobileMenu": {
+            "open": {
+              "hamburger": "Line 1: rotate 45deg, y: 3; Line 2: rotate -45deg, y: -3",
+              "menu": "opacity: 0 → 1, y: 10 → 0, scaleY: 1",
+              "duration": "0.3s"
+            },
+            "close": {
+              "hamburger": "Lines reset to rotate: 0, y: 0",
+              "menu": "opacity: 1 → 0, y: 0 → 10",
+              "duration": "0.2s"
+            }
+          },
+          "initialLoad": {
+            "logo": "scale: 0 → 1, duration: 0.6s",
+            "navItems": "width: 0 → auto, duration: 0.6s, overflow: hidden"
+          }
+        },
+        "cssVariables": {
+          "base": {
+            "var": "--base",
+            "description": "Base color for navigation background",
+            "controlledBy": "baseColor prop"
+          },
+          "pillBg": {
+            "var": "--pill-bg",
+            "description": "Pill background color",
+            "controlledBy": "pillColor prop"
+          },
+          "hoverText": {
+            "var": "--hover-text",
+            "description": "Text color during hover state",
+            "controlledBy": "hoveredPillTextColor prop"
+          },
+          "pillText": {
+            "var": "--pill-text",
+            "description": "Default pill text color",
+            "controlledBy": "pillTextColor prop"
+          },
+          "navH": {
+            "var": "--nav-h",
+            "value": "42px",
+            "description": "Height of navigation bar"
+          },
+          "logo": {
+            "var": "--logo",
+            "value": "36px",
+            "description": "Logo size (width and height)"
+          },
+          "pillPadX": {
+            "var": "--pill-pad-x",
+            "value": "18px",
+            "description": "Horizontal padding inside pills"
+          },
+          "pillGap": {
+            "var": "--pill-gap",
+            "value": "3px",
+            "description": "Gap between pills"
+          }
+        },
+        "implementationGuidelines": {
+          "layout": {
+            "positioning": "absolute top-[1em] z-[1000]",
+            "container": "Full width on mobile, auto on desktop",
+            "logo": "42px circle with 2px padding, contains 36px image",
+            "pills": "Height matches navigation height (42px)"
+          },
+          "hoverMechanism": {
+            "calculation": "Dynamically calculates circular background size based on pill dimensions",
+            "formula": "R = (w² / 4 + h²) / (2h) where R is radius, w is width, h is height",
+            "positioning": "Circle positioned to expand from bottom center",
+            "stateManagement": "Timeline stored in ref, tweened on hover in/out"
+          },
+          "activeIndicator": {
+            "element": "Small circular dot below active pill",
+            "size": "12px (w-3 h-3)",
+            "color": "baseColor (gold for NOOR)",
+            "position": "Absolute, bottom -6px, centered"
+          },
+          "responsive": {
+            "breakpoint": "768px (md: in Tailwind)",
+            "desktop": "Logo + horizontal pill menu",
+            "mobile": "Logo + hamburger, dropdown menu on click"
+          },
+          "routing": {
+            "detection": "Checks if href starts with http://, https://, //, mailto:, tel:, or #",
+            "internal": "Uses react-router-dom Link component",
+            "external": "Uses standard <a> tag",
+            "benefits": "No page reload for internal navigation, proper handling of external links"
+          },
+          "accessibility": {
+            "semanticHTML": "Uses <nav>, role=\"menubar\", role=\"menuitem\"",
+            "ariaLabels": "Supports custom aria-label per item",
+            "ariaExpanded": "Hamburger button has aria-expanded state",
+            "keyboardNav": "Not currently implemented - should be added",
+            "focusIndicators": "Should be added for WCAG compliance"
+          },
+          "performance": {
+            "gsapTimelines": "Created once per pill, reused on every hover",
+            "tweenKilling": "Properly kills active tweens before starting new ones",
+            "layoutCalculations": "Recalculated on window resize and font load",
+            "fontLoading": "Listens for document.fonts.ready to ensure accurate measurements"
+          }
+        },
+        "noorSpecificUsage": {
+          "goldOnDark": {
+            "description": "Gold navigation on dark background (recommended)",
+            "baseColor": "#FFD700",
+            "pillColor": "#0A0A0A",
+            "hoveredPillTextColor": "#0A0A0A",
+            "pillTextColor": "#FFD700",
+            "visualEffect": "Gold navigation bar with dark pills, text becomes dark on hover as gold background expands"
+          },
+          "whiteOnDark": {
+            "description": "White navigation on dark background (alternative)",
+            "baseColor": "#FFFFFF",
+            "pillColor": "#1A1A1A",
+            "hoveredPillTextColor": "#1A1A1A",
+            "pillTextColor": "#FFFFFF",
+            "visualEffect": "White navigation bar with dark pills, clean and minimal"
+          },
+          "darkOnLight": {
+            "description": "Dark navigation on light background (if needed)",
+            "baseColor": "#1A1A1A",
+            "pillColor": "#FFD700",
+            "hoveredPillTextColor": "#FFD700",
+            "pillTextColor": "#1A1A1A",
+            "visualEffect": "Dark navigation bar with gold pills (inverted scheme)"
+          },
+          "recommendedItems": [
+            { "label": "About", "href": "/about", "ariaLabel": "Learn about NOOR" },
+            { "label": "Vision 2071", "href": "/vision", "ariaLabel": "UAE Vision 2071 information" },
+            { "label": "Contact", "href": "/contact", "ariaLabel": "Contact NOOR support" }
+          ]
+        },
+        "codeExample": {
+          "basic": "import PillNav from './components/PillNav';\nimport logo from './assets/noor-logo.svg';\n\nconst items = [\n  { label: 'About', href: '/about' },\n  { label: 'Vision 2071', href: '/vision' },\n  { label: 'Contact', href: '/contact' }\n];\n\n<PillNav\n  logo={logo}\n  logoAlt=\"NOOR Platform\"\n  items={items}\n  baseColor=\"#FFD700\"\n  pillColor=\"#0A0A0A\"\n/>",
+          "withActiveState": "import PillNav from './components/PillNav';\nimport { useLocation } from 'react-router-dom';\nimport logo from './assets/noor-logo.svg';\n\nconst Navigation = () => {\n  const location = useLocation();\n  \n  const items = [\n    { label: 'About', href: '/about' },\n    { label: 'Vision 2071', href: '/vision' },\n    { label: 'Contact', href: '/contact' }\n  ];\n  \n  return (\n    <PillNav\n      logo={logo}\n      logoAlt=\"NOOR Platform\"\n      items={items}\n      activeHref={location.pathname}\n      baseColor=\"#FFD700\"\n      pillColor=\"#0A0A0A\"\n      hoveredPillTextColor=\"#0A0A0A\"\n      pillTextColor=\"#FFD700\"\n      ease=\"power3.easeOut\"\n      initialLoadAnimation={true}\n    />\n  );\n};",
+          "withAnalytics": "import PillNav from './components/PillNav';\nimport { trackEvent } from './analytics';\n\n<PillNav\n  logo={logo}\n  items={items}\n  baseColor=\"#FFD700\"\n  pillColor=\"#0A0A0A\"\n  onMobileMenuClick={() => {\n    trackEvent('navigation', 'mobile_menu_toggle');\n  }}\n/>"
+        },
+        "styling": {
+          "container": "absolute top-[1em] z-[1000] w-full left-0 md:w-auto md:left-auto",
+          "nav": "w-full md:w-max flex items-center justify-between md:justify-start px-4 md:px-0",
+          "logo": "rounded-full p-2 inline-flex items-center justify-center",
+          "navItems": "relative items-center rounded-full hidden md:flex ml-2",
+          "pill": "relative overflow-hidden inline-flex items-center justify-center h-full rounded-full font-semibold text-[16px] uppercase tracking-[0.2px]",
+          "hamburger": "md:hidden rounded-full flex flex-col items-center justify-center gap-1",
+          "mobileMenu": "md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)]",
+          "customization": "Extensive customization via props and CSS variables"
+        },
+        "mobileMenu": {
+          "trigger": "Hamburger button (2 horizontal lines)",
+          "animation": "Lines rotate to form X when open",
+          "menuStyle": "Dropdown below navigation with rounded corners",
+          "backdrop": "Subtle shadow",
+          "items": "Full-width buttons with hover effects",
+          "behavior": "Closes on item click or toggle"
+        },
+        "browserSupport": {
+          "required": "Modern JavaScript (ES6+), CSS3 transforms",
+          "browsers": {
+            "chrome": "60+",
+            "firefox": "60+",
+            "safari": "12+",
+            "edge": "79+"
+          },
+          "dependencies": {
+            "react": "16.8+ (hooks)",
+            "reactRouter": "6.0+ (Link component)",
+            "gsap": "3.0+"
+          }
+        }
+      }
+    ],
+    "integrationPatterns": {
+      "landingPageHero": {
+        "description": "Complete hero section with particles background and navigation",
+        "structure": "PillNav (top) + Particles (background) + Hero Content (foreground)",
+        "zIndexLayers": {
+          "particles": "z-0 (background)",
+          "heroContent": "z-10 (middle)",
+          "navigation": "z-1000 (top)"
+        },
+        "codeExample": "import Particles from './components/Particles';\nimport PillNav from './components/PillNav';\nimport logo from './assets/noor-logo.svg';\n\nconst Hero = () => {\n  const navItems = [\n    { label: 'About', href: '/about' },\n    { label: 'Vision 2071', href: '/vision' },\n    { label: 'Contact', href: '/contact' }\n  ];\n  \n  return (\n    <section className=\"relative w-full h-screen bg-[#0A0A0A] overflow-hidden\">\n      {/* Navigation - Fixed top */}\n      <PillNav\n        logo={logo}\n        logoAlt=\"NOOR Platform\"\n        items={navItems}\n        baseColor=\"#FFD700\"\n        pillColor=\"#0A0A0A\"\n      />\n      \n      {/* Particles Background */}\n      <Particles\n        particleCount={300}\n        particleColors={['#FFD700', '#F0C040', '#FFFFFF']}\n        alphaParticles={true}\n        moveParticlesOnHover={true}\n        className=\"absolute inset-0 z-0 pointer-events-none\"\n      />\n      \n      {/* Hero Content */}\n      <div className=\"relative z-10 h-full flex flex-col items-center justify-center text-center px-4\">\n        <h1 className=\"text-[72px] font-[800] text-[#FFD700] mb-4\"\n            style={{ fontFamily: 'SUSE Mono', textShadow: '0 0 40px rgba(255, 215, 0, 0.4)' }}>\n          NOOR\n        </h1>\n        <p className=\"text-[48px] text-[#F0C040] mb-8 opacity-80\"\n           style={{ fontFamily: 'SUSE Mono' }}>\n          نور\n        </p>\n        <p className=\"text-[20px] text-[#E5E7EB] mb-4 tracking-[0.05em]\"\n           style={{ fontFamily: 'SUSE Mono' }}>\n          National Opportunities Optimization & Realization\n        </p>\n        <p className=\"text-[18px] text-[#9CA3AF] mb-12 max-w-[700px] leading-[1.7]\"\n           style={{ fontFamily: 'SUSE Mono' }}>\n          Illuminating human potential through workforce intelligence\n        </p>\n        <button className=\"bg-[#FFD700] text-[#0A0A0A] px-12 py-4 rounded-lg text-[18px] font-[600]\n                         hover:brightness-110 hover:scale-105 transition-all duration-300\"\n                style={{ fontFamily: 'SUSE Mono', boxShadow: '0 0 40px rgba(255, 215, 0, 0.3)' }}>\n          Discover Your Path →\n        </button>\n      </div>\n    </section>\n  );\n};"
+      },
+      "dashboardShowcaseSection": {
+        "description": "Section showcasing three dashboards with card animation",
+        "structure": "CardSwap positioned in corner with dashboard preview cards",
+        "positioning": "Bottom-right with responsive scaling",
+        "codeExample": "import CardSwap, { Card } from './components/CardSwap';\nimport { useNavigate } from 'react-router-dom';\n\nconst DashboardSection = () => {\n  const navigate = useNavigate();\n  \n  const dashboards = [\n    {\n      title: 'Individual',\n      subtitle: 'CITIZENS & RESIDENTS',\n      route: '/dashboard/individual',\n      color: '#2D8BE0',\n      features: ['Skills assessment', 'Job matching', 'Learning center']\n    },\n    {\n      title: 'Institutional',\n      subtitle: 'EMPLOYERS & ORGANIZATIONS',\n      route: '/dashboard/institutional',\n      color: '#7A0A0A',\n      features: ['EQI tracking', 'Candidate filtering', 'Skills gap analysis']\n    },\n    {\n      title: 'Federal',\n      subtitle: 'GOVERNMENT AGENCIES',\n      route: '/dashboard/federal',\n      color: '#1E3A5F',\n      features: ['National analytics', 'Emiratization monitoring', 'KPI dashboards']\n    }\n  ];\n  \n  return (\n    <section className=\"relative w-full min-h-screen bg-[#0A0A0A] py-24 px-4\">\n      {/* Section Header */}\n      <div className=\"max-w-[1200px] mx-auto mb-16\">\n        <h2 className=\"text-[56px] font-[700] text-white text-center mb-4\"\n            style={{ fontFamily: 'SUSE Mono' }}>\n          Choose Your Path\n        </h2>\n        <p className=\"text-[18px] text-[#E5E7EB] text-center\"\n           style={{ fontFamily: 'SUSE Mono' }}>\n          Select your role to access the appropriate dashboard\n        </p>\n      </div>\n      \n      {/* Cards Grid - Desktop */}\n      <div className=\"hidden md:grid grid-cols-3 gap-10 max-w-[1200px] mx-auto\">\n        {dashboards.map((dash, i) => (\n          <div key={i}\n               className=\"bg-[#1A1A1A] border-2 border-[#3A3A3A] rounded-2xl p-10\n                          hover:border-[var(--color)] hover:-translate-y-2 hover:shadow-2xl\n                          transition-all duration-400 cursor-pointer\"\n               style={{ '--color': dash.color }}\n               onClick={() => navigate(dash.route)}>\n            <h3 className=\"text-[32px] font-[700] text-white mb-3\"\n                style={{ fontFamily: 'SUSE Mono' }}>\n              {dash.title}\n            </h3>\n            <p className=\"text-[16px] font-[500] mb-6 tracking-[0.1em]\"\n               style={{ fontFamily: 'SUSE Mono', color: dash.color }}>\n              {dash.subtitle}\n            </p>\n            <ul className=\"space-y-2 mb-8\">\n              {dash.features.map((feature, j) => (\n                <li key={j} className=\"text-[14px] text-[#9CA3AF] flex items-start\"\n                    style={{ fontFamily: 'SUSE Mono' }}>\n                  <span className=\"text-[#E8B86D] mr-2\">→</span>\n                  {feature}\n                </li>\n              ))}\n            </ul>\n            <button className=\"w-full py-3 border-2 rounded-lg font-[600] text-[16px]\n                             hover:bg-[var(--color)] hover:text-[#0A0A0A] transition-all\"\n                    style={{ fontFamily: 'SUSE Mono', borderColor: dash.color, color: dash.color }}>\n              Enter Dashboard →\n            </button>\n          </div>\n        ))}\n      </div>\n      \n      {/* Card Swap - Mobile/Tablet Alternative */}\n      <div className=\"md:hidden relative h-[600px]\">\n        <CardSwap\n          width={350}\n          height={480}\n          cardDistance={40}\n          verticalDistance={50}\n          delay={5000}\n          pauseOnHover={true}\n          easing=\"elastic\"\n          onCardClick={(idx) => navigate(dashboards[idx].route)}\n        >\n          {dashboards.map((dash, i) => (\n            <Card key={i} customClass=\"cursor-pointer\"\n                  style={{ borderColor: dash.color }}>\n              <div className=\"w-full h-full p-8 flex flex-col\">\n                <h3 className=\"text-[28px] font-[700] text-white mb-2\"\n                    style={{ fontFamily: 'SUSE Mono' }}>\n                  {dash.title}\n                </h3>\n                <p className=\"text-[14px] font-[500] mb-6\"\n                   style={{ fontFamily: 'SUSE Mono', color: dash.color }}>\n                  {dash.subtitle}\n                </p>\n                <div className=\"flex-1 bg-[#0A0A0A] rounded-lg p-4 border border-[#3A3A3A]\">\n                  {/* Dashboard preview/illustration */}\n                </div>\n              </div>\n            </Card>\n          ))}\n        </CardSwap>\n      </div>\n    </section>\n  );\n};"
+      },
+      "fullLandingPage": {
+        "description": "Complete NOOR landing page structure with all components",
+        "sections": [
+          "Hero (with Particles + PillNav)",
+          "Philosophy/Quote Section",
+          "Dashboard Navigation (Grid or CardSwap)",
+          "Vision 2071 Statement",
+          "Footer"
+        ],
+        "componentUsage": {
+          "Particles": ["Hero background", "Philosophy section background (subtle)"],
+          "PillNav": ["Fixed navigation throughout page"],
+          "CardSwap": ["Mobile/tablet dashboard showcase", "Alternative to grid on smaller screens"]
+        }
+      }
+    },
+    "designTokens": {
+      "spacing": {
+        "micro": "4px",
+        "tiny": "8px",
+        "small": "16px",
+        "medium": "24px",
+        "large": "40px",
+        "xlarge": "64px",
+        "xxlarge": "96px",
+        "huge": "120px"
+      },
+      "borderRadius": {
+        "small": "8px",
+        "medium": "12px",
+        "large": "16px",
+        "xlarge": "24px",
+        "full": "9999px"
+      },
+      "shadows": {
+        "subtle": "0 2px 8px rgba(0, 0, 0, 0.08)",
+        "moderate": "0 4px 16px rgba(0, 0, 0, 0.12)",
+        "prominent": "0 8px 32px rgba(0, 0, 0, 0.16)",
+        "gold": "0 0 40px rgba(255, 215, 0, 0.3)",
+        "goldStrong": "0 0 60px rgba(255, 215, 0, 0.5)"
+      },
+      "transitions": {
+        "fast": "0.15s",
+        "normal": "0.3s",
+        "slow": "0.6s",
+        "verySlow": "1.2s"
+      },
+      "zIndex": {
+        "particles": 0,
+        "content": 10,
+        "navigation": 1000,
+        "modal": 2000,
+        "tooltip": 3000
+      }
+    },
+    "performanceGuidelines": {
+      "particles": {
+        "optimization": "Reduce particle count on mobile devices",
+        "monitoring": "Watch for frame drops, target 60fps",
+        "fallback": "Consider disabling on low-end devices"
+      },
+      "cardSwap": {
+        "optimization": "Uses GPU-accelerated transforms",
+        "consideration": "Pause animations when off-screen",
+        "mobile": "Reduce card sizes and scale for better performance"
+      },
+      "pillNav": {
+        "optimization": "Timelines created once and reused",
+        "fontLoading": "Wait for fonts before calculating sizes",
+        "eventListeners": "Properly cleaned up on unmount"
+      },
+      "general": {
+        "lazyLoading": "Lazy load below-fold sections",
+        "imageOptimization": "Use WebP with fallbacks, responsive images",
+        "codesplitting": "Split components into separate bundles",
+        "prefersReducedMotion": "Respect user motion preferences (implement across all components)"
+      }
+    },
+    "accessibilityGuidelines": {
+      "required": [
+        "WCAG 2.1 AA compliance",
+        "Keyboard navigation support",
+        "Screen reader compatibility",
+        "Color contrast requirements met",
+        "Focus indicators visible",
+        "Semantic HTML structure"
+      ],
+      "improvements": [
+        "Add prefers-reduced-motion support to Particles",
+        "Implement keyboard navigation for CardSwap",
+        "Add skip links to PillNav",
+        "ARIA live regions for dynamic content",
+        "Focus management for mobile menu"
+      ],
+      "testing": [
+        "Test with screen readers (NVDA, JAWS, VoiceOver)",
+        "Test keyboard-only navigation",
+        "Verify color contrast with tools",
+        "Test with browser zoom (200%+)",
+        "Test with reduced motion enabled"
+      ]
+    },
+    "deploymentChecklist": [
+      "All components tested across target browsers",
+      "Performance optimization completed",
+      "Accessibility audit passed",
+      "Responsive design verified on all breakpoints",
+      "Analytics tracking implemented",
+      "Error boundaries added",
+      "Loading states implemented",
+      "SEO meta tags configured",
+      "Images optimized and lazy loaded",
+      "Fonts preloaded",
+      "Security headers configured",
+      "HTTPS enforced"
+    ]
+  }
+}

@@ -1,0 +1,427 @@
+{
+  "designSystem": {
+    "name": "Institutional Dashboard Design System",
+    "version": "1.0.0",
+    "theme": "dark",
+    "description": "Comprehensive design system for the Institutional Dashboard with red accent colors and dark theme aesthetics"
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "SUSE Mono, monospace",
+      "fallback": "Courier New, monospace"
+    },
+    "fontWeights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "fontSizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem"
+    },
+    "lineHeights": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.75
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "50": "#FFE5E5",
+        "100": "#FFCCCC",
+        "200": "#FF9999",
+        "300": "#FF6666",
+        "400": "#FF3333",
+        "500": "#DC143C",
+        "600": "#C41230",
+        "700": "#A50F28",
+        "800": "#8B0000",
+        "900": "#6B0000"
+      },
+      "accent": {
+        "coral": "#FF5A5F",
+        "cream": "#F5F5DC",
+        "teal": "#7DD3C0",
+        "steel": "#5B7C99",
+        "navy": "#1B2845"
+      },
+      "neutral": {
+        "black": "#000000",
+        "dark": "#060010",
+        "darker": "#0A0A0A",
+        "gray900": "#1A1A1A",
+        "gray800": "#222222",
+        "gray700": "#333333",
+        "gray600": "#4A4A4A",
+        "gray500": "#6B6B6B",
+        "gray400": "#8B8B8B",
+        "gray300": "#ACACAC",
+        "gray200": "#CCCCCC",
+        "gray100": "#E5E5E5",
+        "white": "#FFFFFF"
+      },
+      "semantic": {
+        "success": "#4CAF50",
+        "warning": "#FFA726",
+        "error": "#DC143C",
+        "info": "#29B6F6"
+      }
+    },
+    "backgrounds": {
+      "primary": "#060010",
+      "secondary": "#0A0A0A",
+      "tertiary": "#1A1A1A",
+      "card": "#222222",
+      "elevated": "#2A2A2A"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#E5E5E5",
+      "tertiary": "#ACACAC",
+      "disabled": "#6B6B6B",
+      "accent": "#DC143C"
+    },
+    "borders": {
+      "default": "#333333",
+      "hover": "#4A4A4A",
+      "active": "#DC143C",
+      "focus": "#C41230"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem",
+    "24": "6rem"
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "0.25rem",
+    "base": "0.5rem",
+    "md": "0.75rem",
+    "lg": "1rem",
+    "xl": "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.75rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.5)",
+    "base": "0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.4)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4)",
+    "glow": "0 0 20px rgba(220, 20, 60, 0.4)",
+    "glowStrong": "0 0 30px rgba(220, 20, 60, 0.6)"
+  },
+  "components": {
+    "navigation": {
+      "primary": {
+        "component": "CardNav",
+        "configuration": {
+          "logo": "/assets/institutional-logo.svg",
+          "logoAlt": "Institutional Dashboard Logo",
+          "baseColor": "#0A0A0A",
+          "menuColor": "#DC143C",
+          "buttonBgColor": "#8B0000",
+          "buttonTextColor": "#FFFFFF",
+          "items": [
+            {
+              "label": "Organizations",
+              "bgColor": "#1A1A1A",
+              "textColor": "#FFE5E5",
+              "links": [
+                { "label": "Directory", "href": "/organizations", "ariaLabel": "View organization directory" },
+                { "label": "Management", "href": "/organizations/manage", "ariaLabel": "Manage organizations" }
+              ]
+            },
+            {
+              "label": "Members",
+              "bgColor": "#222222",
+              "textColor": "#FFCCCC",
+              "links": [
+                { "label": "Active", "href": "/members/active", "ariaLabel": "View active members" },
+                { "label": "Pending", "href": "/members/pending", "ariaLabel": "View pending members" }
+              ]
+            },
+            {
+              "label": "Reports",
+              "bgColor": "#2A2A2A",
+              "textColor": "#FF9999",
+              "links": [
+                { "label": "Analytics", "href": "/reports/analytics", "ariaLabel": "View analytics reports" },
+                { "label": "Exports", "href": "/reports/exports", "ariaLabel": "Export reports" }
+              ]
+            }
+          ]
+        }
+      },
+      "secondary": {
+        "component": "PillNav",
+        "configuration": {
+          "logo": "/assets/institutional-icon.svg",
+          "logoAlt": "Institutional Icon",
+          "baseColor": "#1A1A1A",
+          "pillColor": "#8B0000",
+          "pillTextColor": "#FFFFFF",
+          "hoveredPillTextColor": "#000000",
+          "ease": "power3.easeOut",
+          "initialLoadAnimation": true,
+          "items": [
+            { "label": "Dashboard", "href": "/", "ariaLabel": "Go to dashboard" },
+            { "label": "Organizations", "href": "/organizations", "ariaLabel": "View organizations" },
+            { "label": "Members", "href": "/members", "ariaLabel": "View members" },
+            { "label": "Reports", "href": "/reports", "ariaLabel": "View reports" },
+            { "label": "Settings", "href": "/settings", "ariaLabel": "Manage settings" }
+          ]
+        }
+      },
+      "fullscreen": {
+        "component": "StaggeredMenu",
+        "configuration": {
+          "position": "right",
+          "colors": ["#8B0000", "#A50F28", "#C41230", "#DC143C"],
+          "logoUrl": "/assets/institutional-logo-white.svg",
+          "menuButtonColor": "#FFE5E5",
+          "openMenuButtonColor": "#000000",
+          "accentColor": "#DC143C",
+          "isFixed": true,
+          "changeMenuColorOnOpen": true,
+          "displaySocials": true,
+          "displayItemNumbering": true,
+          "items": [
+            { "label": "Overview", "link": "/", "ariaLabel": "Navigate to overview" },
+            { "label": "Organizations", "link": "/organizations", "ariaLabel": "Navigate to organizations" },
+            { "label": "Members", "link": "/members", "ariaLabel": "Navigate to members" },
+            { "label": "Reports", "link": "/reports", "ariaLabel": "Navigate to reports" },
+            { "label": "Settings", "link": "/settings", "ariaLabel": "Navigate to settings" }
+          ],
+          "socialItems": [
+            { "label": "LinkedIn", "link": "https://linkedin.com" },
+            { "label": "Twitter", "link": "https://twitter.com" }
+          ]
+        }
+      },
+      "dock": {
+        "component": "Dock",
+        "configuration": {
+          "distance": 200,
+          "panelHeight": 64,
+          "baseItemSize": 50,
+          "dockHeight": 256,
+          "magnification": 70,
+          "spring": { "mass": 0.1, "stiffness": 150, "damping": 12 },
+          "items": [
+            { "label": "Home", "icon": "HomeIcon", "onClick": "navigateHome" },
+            { "label": "Organizations", "icon": "BuildingIcon", "onClick": "navigateOrganizations" },
+            { "label": "Members", "icon": "UsersIcon", "onClick": "navigateMembers" },
+            { "label": "Reports", "icon": "ChartIcon", "onClick": "navigateReports" },
+            { "label": "Settings", "icon": "SettingsIcon", "onClick": "navigateSettings" }
+          ]
+        }
+      }
+    },
+    "cards": {
+      "bento": {
+        "component": "MagicBento",
+        "configuration": {
+          "textAutoHide": true,
+          "enableStars": true,
+          "enableSpotlight": true,
+          "enableBorderGlow": true,
+          "disableAnimations": false,
+          "spotlightRadius": 300,
+          "particleCount": 12,
+          "enableTilt": true,
+          "glowColor": "220, 20, 60",
+          "clickEffect": true,
+          "enableMagnetism": true,
+          "cardData": [
+            {
+              "color": "#060010",
+              "title": "Organization Stats",
+              "description": "Track institutional metrics",
+              "label": "Stats"
+            },
+            {
+              "color": "#060010",
+              "title": "Member Directory",
+              "description": "Manage member profiles",
+              "label": "Directory"
+            },
+            {
+              "color": "#060010",
+              "title": "Collaboration",
+              "description": "Inter-institutional collaboration",
+              "label": "Teamwork"
+            },
+            {
+              "color": "#060010",
+              "title": "Compliance",
+              "description": "Regulatory compliance tracking",
+              "label": "Compliance"
+            },
+            {
+              "color": "#060010",
+              "title": "Resources",
+              "description": "Shared institutional resources",
+              "label": "Resources"
+            },
+            {
+              "color": "#060010",
+              "title": "Security",
+              "description": "Institution-wide security",
+              "label": "Security"
+            }
+          ]
+        }
+      },
+      "spotlight": {
+        "component": "SpotlightCard",
+        "configuration": {
+          "className": "p-8",
+          "spotlightColor": "rgba(220, 20, 60, 0.25)"
+        }
+      }
+    },
+    "interactive": {
+      "carousel": {
+        "component": "Carousel",
+        "configuration": {
+          "baseWidth": 300,
+          "autoplay": true,
+          "autoplayDelay": 4000,
+          "pauseOnHover": true,
+          "loop": true,
+          "round": false,
+          "items": [
+            {
+              "title": "Organization Management",
+              "description": "Comprehensive institutional tools",
+              "id": 1,
+              "icon": "BuildingIcon"
+            },
+            {
+              "title": "Member Analytics",
+              "description": "Track member engagement",
+              "id": 2,
+              "icon": "ChartBarIcon"
+            },
+            {
+              "title": "Collaboration Hub",
+              "description": "Connect institutions seamlessly",
+              "id": 3,
+              "icon": "UsersIcon"
+            },
+            {
+              "title": "Compliance Suite",
+              "description": "Ensure regulatory compliance",
+              "id": 4,
+              "icon": "ShieldCheckIcon"
+            },
+            {
+              "title": "Resource Library",
+              "description": "Access shared resources",
+              "id": 5,
+              "icon": "CollectionIcon"
+            }
+          ]
+        }
+      },
+      "button": {
+        "component": "StarBorder",
+        "configuration": {
+          "as": "button",
+          "className": "",
+          "color": "#DC143C",
+          "speed": "6s",
+          "thickness": 1
+        }
+      }
+    },
+    "backgrounds": {
+      "squares": {
+        "component": "Squares",
+        "configuration": {
+          "direction": "diagonal",
+          "speed": 0.5,
+          "borderColor": "#333333",
+          "squareSize": 40,
+          "hoverFillColor": "#1A1A1A"
+        }
+      },
+      "aurora": {
+        "component": "Aurora",
+        "configuration": {
+          "colorStops": ["#8B0000", "#DC143C", "#8B0000"],
+          "amplitude": 1.0,
+          "blend": 0.5,
+          "speed": 1.0
+        }
+      }
+    }
+  },
+  "animations": {
+    "durations": {
+      "fast": "150ms",
+      "base": "300ms",
+      "slow": "500ms",
+      "slower": "800ms"
+    },
+    "easings": {
+      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "in": "cubic-bezier(0.4, 0, 1, 1)",
+      "out": "cubic-bezier(0, 0, 0.2, 1)",
+      "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "power3": "power3.out",
+      "power4": "power4.out"
+    }
+  },
+  "layout": {
+    "containers": {
+      "xs": "320px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px"
+    },
+    "breakpoints": {
+      "mobile": "0px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1280px"
+    }
+  },
+  "accessibility": {
+    "focusRing": {
+      "color": "#DC143C",
+      "width": "2px",
+      "offset": "2px",
+      "style": "solid"
+    },
+    "contrast": {
+      "minimum": "4.5:1",
+      "enhanced": "7:1"
+    }
+  }
+}

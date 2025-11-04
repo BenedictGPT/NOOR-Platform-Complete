@@ -1,0 +1,37 @@
+{
+  "designSystem": {
+    "name": "Federal Dashboard Design System",
+    "version": "1.0.0",
+    "theme": "dark",
+    "description": "Comprehensive design system for the Federal Dashboard with gold/amber accent colors and dark theme aesthetics"
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "SUSE Mono, monospace",
+      "fallback": "Courier New, monospace"
+    },
+    "fontWeights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "500": "#C9A04D",
+        "600": "#B8860B",
+        "700": "#9A7009"
+      },
+      "neutral": {
+        "dark": "#060010",
+        "darker": "#0A0A0A",
+        "gray900": "#1A1A1A",
+        "gray800": "#222222"
+      }
+    }
+  }
+}
+

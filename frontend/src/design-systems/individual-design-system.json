@@ -1,0 +1,428 @@
+{
+  "designSystem": {
+    "name": "Individual Dashboard Design System",
+    "version": "1.0.0",
+    "theme": "dark",
+    "description": "Comprehensive design system for the Individual Dashboard with blue accent colors and dark theme aesthetics"
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "SUSE Mono, monospace",
+      "fallback": "Courier New, monospace"
+    },
+    "fontWeights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "fontSizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem"
+    },
+    "lineHeights": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.75
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "50": "#E6F2FF",
+        "100": "#B0D4F1",
+        "200": "#8BBFE9",
+        "300": "#66A9E0",
+        "400": "#4A90E2",
+        "500": "#3B7AC7",
+        "600": "#2E5FA0",
+        "700": "#224879",
+        "800": "#003366",
+        "900": "#002244"
+      },
+      "accent": {
+        "coral": "#FF5A5F",
+        "cream": "#F5F5DC",
+        "teal": "#7DD3C0",
+        "steel": "#5B7C99",
+        "navy": "#1B2845"
+      },
+      "neutral": {
+        "black": "#000000",
+        "dark": "#060010",
+        "darker": "#0A0A0A",
+        "gray900": "#1A1A1A",
+        "gray800": "#222222",
+        "gray700": "#333333",
+        "gray600": "#4A4A4A",
+        "gray500": "#6B6B6B",
+        "gray400": "#8B8B8B",
+        "gray300": "#ACACAC",
+        "gray200": "#CCCCCC",
+        "gray100": "#E5E5E5",
+        "white": "#FFFFFF"
+      },
+      "semantic": {
+        "success": "#4CAF50",
+        "warning": "#FFA726",
+        "error": "#EF5350",
+        "info": "#4A90E2"
+      }
+    },
+    "backgrounds": {
+      "primary": "#060010",
+      "secondary": "#0A0A0A",
+      "tertiary": "#1A1A1A",
+      "card": "#222222",
+      "elevated": "#2A2A2A"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#E5E5E5",
+      "tertiary": "#ACACAC",
+      "disabled": "#6B6B6B",
+      "accent": "#4A90E2"
+    },
+    "borders": {
+      "default": "#333333",
+      "hover": "#4A4A4A",
+      "active": "#4A90E2",
+      "focus": "#3B7AC7"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem",
+    "24": "6rem"
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "0.25rem",
+    "base": "0.5rem",
+    "md": "0.75rem",
+    "lg": "1rem",
+    "xl": "1.25rem",
+    "2xl": "1.5rem",
+    "3xl": "1.75rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.5)",
+    "base": "0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.4)",
+    "md": "0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4)",
+    "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4)",
+    "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4)",
+    "glow": "0 0 20px rgba(74, 144, 226, 0.4)",
+    "glowStrong": "0 0 30px rgba(74, 144, 226, 0.6)"
+  },
+  "components": {
+    "navigation": {
+      "primary": {
+        "component": "CardNav",
+        "configuration": {
+          "logo": "/assets/individual-logo.svg",
+          "logoAlt": "Individual Dashboard Logo",
+          "baseColor": "#0A0A0A",
+          "menuColor": "#4A90E2",
+          "buttonBgColor": "#003366",
+          "buttonTextColor": "#FFFFFF",
+          "items": [
+            {
+              "label": "Profile",
+              "bgColor": "#1A1A1A",
+              "textColor": "#B0D4F1",
+              "links": [
+                { "label": "Overview", "href": "/profile", "ariaLabel": "View profile overview" },
+                { "label": "Edit", "href": "/profile/edit", "ariaLabel": "Edit profile" }
+              ]
+            },
+            {
+              "label": "Activity",
+              "bgColor": "#222222",
+              "textColor": "#8BBFE9",
+              "links": [
+                { "label": "Recent", "href": "/activity/recent", "ariaLabel": "View recent activity" },
+                { "label": "History", "href": "/activity/history", "ariaLabel": "View activity history" }
+              ]
+            },
+            {
+              "label": "Settings",
+              "bgColor": "#2A2A2A",
+              "textColor": "#66A9E0",
+              "links": [
+                { "label": "Preferences", "href": "/settings/preferences", "ariaLabel": "Manage preferences" },
+                { "label": "Security", "href": "/settings/security", "ariaLabel": "Security settings" }
+              ]
+            }
+          ]
+        }
+      },
+      "secondary": {
+        "component": "PillNav",
+        "configuration": {
+          "logo": "/assets/individual-icon.svg",
+          "logoAlt": "Individual Icon",
+          "baseColor": "#1A1A1A",
+          "pillColor": "#003366",
+          "pillTextColor": "#FFFFFF",
+          "hoveredPillTextColor": "#000000",
+          "ease": "power3.easeOut",
+          "initialLoadAnimation": true,
+          "items": [
+            { "label": "Dashboard", "href": "/", "ariaLabel": "Go to dashboard" },
+            { "label": "Profile", "href": "/profile", "ariaLabel": "View profile" },
+            { "label": "Activity", "href": "/activity", "ariaLabel": "View activity" },
+            { "label": "Analytics", "href": "/analytics", "ariaLabel": "View analytics" },
+            { "label": "Settings", "href": "/settings", "ariaLabel": "Manage settings" }
+          ]
+        }
+      },
+      "fullscreen": {
+        "component": "StaggeredMenu",
+        "configuration": {
+          "position": "right",
+          "colors": ["#003366", "#224879", "#2E5FA0", "#4A90E2"],
+          "logoUrl": "/assets/individual-logo-white.svg",
+          "menuButtonColor": "#B0D4F1",
+          "openMenuButtonColor": "#000000",
+          "accentColor": "#4A90E2",
+          "isFixed": true,
+          "changeMenuColorOnOpen": true,
+          "displaySocials": true,
+          "displayItemNumbering": true,
+          "items": [
+            { "label": "Overview", "link": "/", "ariaLabel": "Navigate to overview" },
+            { "label": "Profile", "link": "/profile", "ariaLabel": "Navigate to profile" },
+            { "label": "Activity", "link": "/activity", "ariaLabel": "Navigate to activity" },
+            { "label": "Analytics", "link": "/analytics", "ariaLabel": "Navigate to analytics" },
+            { "label": "Settings", "link": "/settings", "ariaLabel": "Navigate to settings" }
+          ],
+          "socialItems": [
+            { "label": "LinkedIn", "link": "https://linkedin.com" },
+            { "label": "Twitter", "link": "https://twitter.com" },
+            { "label": "GitHub", "link": "https://github.com" }
+          ]
+        }
+      },
+      "dock": {
+        "component": "Dock",
+        "configuration": {
+          "distance": 200,
+          "panelHeight": 64,
+          "baseItemSize": 50,
+          "dockHeight": 256,
+          "magnification": 70,
+          "spring": { "mass": 0.1, "stiffness": 150, "damping": 12 },
+          "items": [
+            { "label": "Home", "icon": "HomeIcon", "onClick": "navigateHome" },
+            { "label": "Profile", "icon": "UserIcon", "onClick": "navigateProfile" },
+            { "label": "Activity", "icon": "ActivityIcon", "onClick": "navigateActivity" },
+            { "label": "Analytics", "icon": "ChartIcon", "onClick": "navigateAnalytics" },
+            { "label": "Settings", "icon": "SettingsIcon", "onClick": "navigateSettings" }
+          ]
+        }
+      }
+    },
+    "cards": {
+      "bento": {
+        "component": "MagicBento",
+        "configuration": {
+          "textAutoHide": true,
+          "enableStars": true,
+          "enableSpotlight": true,
+          "enableBorderGlow": true,
+          "disableAnimations": false,
+          "spotlightRadius": 300,
+          "particleCount": 12,
+          "enableTilt": true,
+          "glowColor": "74, 144, 226",
+          "clickEffect": true,
+          "enableMagnetism": true,
+          "cardData": [
+            {
+              "color": "#060010",
+              "title": "Personal Stats",
+              "description": "Track your personal metrics",
+              "label": "Stats"
+            },
+            {
+              "color": "#060010",
+              "title": "Activity Feed",
+              "description": "Recent activity overview",
+              "label": "Activity"
+            },
+            {
+              "color": "#060010",
+              "title": "Goals",
+              "description": "Track personal goals",
+              "label": "Goals"
+            },
+            {
+              "color": "#060010",
+              "title": "Analytics",
+              "description": "Personal performance analytics",
+              "label": "Analytics"
+            },
+            {
+              "color": "#060010",
+              "title": "Connections",
+              "description": "Your network connections",
+              "label": "Network"
+            },
+            {
+              "color": "#060010",
+              "title": "Privacy",
+              "description": "Personal privacy settings",
+              "label": "Privacy"
+            }
+          ]
+        }
+      },
+      "spotlight": {
+        "component": "SpotlightCard",
+        "configuration": {
+          "className": "p-8",
+          "spotlightColor": "rgba(74, 144, 226, 0.25)"
+        }
+      }
+    },
+    "interactive": {
+      "carousel": {
+        "component": "Carousel",
+        "configuration": {
+          "baseWidth": 300,
+          "autoplay": true,
+          "autoplayDelay": 4000,
+          "pauseOnHover": true,
+          "loop": true,
+          "round": false,
+          "items": [
+            {
+              "title": "Personal Dashboard",
+              "description": "Your personalized control center",
+              "id": 1,
+              "icon": "DashboardIcon"
+            },
+            {
+              "title": "Activity Tracking",
+              "description": "Monitor your daily activities",
+              "id": 2,
+              "icon": "ActivityIcon"
+            },
+            {
+              "title": "Goal Management",
+              "description": "Set and achieve your goals",
+              "id": 3,
+              "icon": "TargetIcon"
+            },
+            {
+              "title": "Analytics Suite",
+              "description": "Personal performance insights",
+              "id": 4,
+              "icon": "ChartBarIcon"
+            },
+            {
+              "title": "Privacy Center",
+              "description": "Control your privacy settings",
+              "id": 5,
+              "icon": "ShieldCheckIcon"
+            }
+          ]
+        }
+      },
+      "button": {
+        "component": "StarBorder",
+        "configuration": {
+          "as": "button",
+          "className": "",
+          "color": "#4A90E2",
+          "speed": "6s",
+          "thickness": 1
+        }
+      }
+    },
+    "backgrounds": {
+      "squares": {
+        "component": "Squares",
+        "configuration": {
+          "direction": "diagonal",
+          "speed": 0.5,
+          "borderColor": "#333333",
+          "squareSize": 40,
+          "hoverFillColor": "#1A1A1A"
+        }
+      },
+      "aurora": {
+        "component": "Aurora",
+        "configuration": {
+          "colorStops": ["#003366", "#4A90E2", "#003366"],
+          "amplitude": 1.0,
+          "blend": 0.5,
+          "speed": 1.0
+        }
+      }
+    }
+  },
+  "animations": {
+    "durations": {
+      "fast": "150ms",
+      "base": "300ms",
+      "slow": "500ms",
+      "slower": "800ms"
+    },
+    "easings": {
+      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "in": "cubic-bezier(0.4, 0, 1, 1)",
+      "out": "cubic-bezier(0, 0, 0.2, 1)",
+      "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "power3": "power3.out",
+      "power4": "power4.out"
+    }
+  },
+  "layout": {
+    "containers": {
+      "xs": "320px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px"
+    },
+    "breakpoints": {
+      "mobile": "0px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1280px"
+    }
+  },
+  "accessibility": {
+    "focusRing": {
+      "color": "#4A90E2",
+      "width": "2px",
+      "offset": "2px",
+      "style": "solid"
+    },
+    "contrast": {
+      "minimum": "4.5:1",
+      "enhanced": "7:1"
+    }
+  }
+}
